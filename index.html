@@ -9657,12 +9657,25 @@ window.amdSubmitLead = async function(event) {
     try {
         var response = await fetch("https://formsubmit.co/ajax/anymeans.detailingnj@gmail.com", {
             method: "POST",
+            referrerPolicy: "origin",
             headers: {"Content-Type":"application/json","Accept":"application/json"},
             body: JSON.stringify(notification)
         });
-        var result = await response.json();
+        var result;
+        try {
+            result = await response.json();
+        } catch (parseError) {
+            throw new Error("INVALID_PROVIDER_RESPONSE");
+        }
         if (!response.ok || !result || !(result.success === true || result.success === "true")) {
-            throw new Error("Email notification service did not accept the request.");
+            var providerMessage = String((result && result.message) || "").slice(0, 300);
+            if (/activat|verif|confirm/i.test(providerMessage)) {
+                throw new Error("EMAIL_ACTIVATION_REQUIRED");
+            }
+            if (/web server|browsed as HTML files/i.test(providerMessage)) {
+                throw new Error("FORM_ORIGIN_NOT_ACCEPTED");
+            }
+            throw new Error("EMAIL_PROVIDER_ERROR: " + providerMessage);
         }
 
         var panel = document.getElementById("quote");
@@ -9677,7 +9690,16 @@ window.amdSubmitLead = async function(event) {
             panel.scrollIntoView({behavior:"smooth",block:"center"});
         }
     } catch (err) {
-        status.textContent = "Your request couldn't be sent. Please try again, or call us at 862-621-8676. Your answers are still here.";
+        var code = err && err.message ? err.message : "REQUEST_FAILED";
+        console.warn("AMD email submission issue:", code);
+        status.style.color = "#ffca9d";
+        if (code === "EMAIL_ACTIVATION_REQUIRED") {
+            status.textContent = "Online quote requests are waiting for the business to verify its email notifications. Your request has not been confirmed as delivered. Please call 862-621-8676 for now. Your entries are still saved in this form.";
+        } else if (code === "FORM_ORIGIN_NOT_ACCEPTED") {
+            status.textContent = "The email service could not verify this form. Please call 862-621-8676, or try again later. Your entries are still in this form.";
+        } else {
+            status.textContent = "We couldn't confirm delivery of your request. Please try again or call 862-621-8676. Your entries are still in this form.";
+        }
     } finally {
         if (button && button.isConnected) {
             button.disabled = false;

@@ -6270,6 +6270,56 @@ TIGHTER HERO RHYTHM + TRUE VIEWPORT MOBILE DOCK
   #amd-site .amd-service-pricing {min-height:515px !important;}
 }
 
+
+/* Mobile photo-first cards: images above copy and no gradient over vehicles. */
+@media (max-width:700px) {
+ #amd-site .amd-service-grid {display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:18px!important;}
+ #amd-site .amd-service, #amd-site .amd-service-pricing {
+  display:flex!important;flex-direction:column!important;min-height:0!important;height:auto!important;
+  overflow:hidden!important;border-radius:18px!important;background:#101026!important;
+ }
+ #amd-site .amd-service > img, #amd-site .amd-service:nth-child(n) > img {
+  position:relative!important;inset:auto!important;display:block!important;flex:0 0 auto!important;
+  width:100%!important;height:clamp(280px,80vw,375px)!important;min-height:0!important;
+  object-fit:cover!important;object-position:center 74%!important;
+  transform:none!important;transition:none!important;filter:none!important;
+ }
+ #amd-site .amd-service:nth-child(2) > img {object-position:center 70%!important;}
+ #amd-site .amd-service::after {content:none!important;display:none!important;background:none!important;}
+ #amd-site .amd-service:hover > img,
+ #amd-site .amd-service:nth-child(n):hover > img {transform:none!important;}
+ #amd-site .amd-service-copy {
+  position:relative!important;z-index:2!important;left:auto!important;right:auto!important;bottom:auto!important;
+  width:100%!important;flex:1 0 auto!important;padding:20px!important;background:#101026!important;
+ }
+ #amd-site .amd-service h3 {font-size:clamp(25px,7vw,34px)!important;line-height:1.08!important;}
+ #amd-site .amd-service p {min-height:0!important;margin:10px 0 17px!important;font-size:13px!important;line-height:1.55!important;color:#c9cedd!important;}
+ #amd-site .amd-service-num {font-size:10px!important;}
+ #amd-site .amd-service button {min-height:50px!important;font-size:11px!important;touch-action:manipulation;}
+ #amd-site .amd-price-menu {margin-bottom:16px!important;}
+}
+#amd-site .amd-reviews .amd-review-track {
+ width:100%!important;display:flex!important;flex-wrap:nowrap!important;justify-content:center!important;
+ animation:none!important;transform:none!important;gap:18px!important;
+}
+#amd-site .amd-review-action {
+ display:inline-flex;align-items:center;justify-content:center;min-height:44px;
+ padding:10px 16px;margin-top:auto;border:1px solid rgba(116,185,255,.42);border-radius:10px;
+ color:#fff;text-decoration:none;font-size:12px;font-weight:800;background:rgba(60,96,190,.24);
+}
+#amd-site .amd-review-action:hover {background:rgba(75,116,214,.43);}
+#amd-site .amd-reviews .amd-review {flex:1 1 0!important;max-width:460px!important;width:auto!important;min-width:0!important;gap:6px;}
+#amd-site .amd-reviews .amd-review p {flex:1 1 auto;margin-bottom:12px;}
+@media (max-width:700px) {
+ #amd-site .amd-reviews .amd-review-track {
+  justify-content:flex-start!important;overflow-x:auto!important;scroll-snap-type:x mandatory!important;
+  -webkit-overflow-scrolling:touch;padding:0 18px 14px!important;box-sizing:border-box;scrollbar-width:thin;
+ }
+ #amd-site .amd-reviews .amd-review {
+  flex:0 0 min(85vw,360px)!important;width:min(85vw,360px)!important;min-height:280px!important;
+  padding:22px!important;scroll-snap-align:center;
+ }
+}
 </style>
 
 
@@ -6503,13 +6553,13 @@ alt="Luxury vehicle professional detailing"
 
 <video
 id="amdHeroVideo"
-src="https://assets.cdn.filesafe.space/bF1dT8IAVuvat84LkAVe/media/6a9583a09ced56098ace4c9b.mov"
+src="https://assets.cdn.filesafe.space/bF1dT8IAVuvat84LkAVe/media/6acd8b2d41cfb3bf92bc1356.mov"
 autoplay
 muted
 loop
 playsinline
 webkit-playsinline
-preload="auto"
+preload="metadata"
 poster="https://images.pexels.com/photos/6873174/pexels-photo-6873174.jpeg?auto=compress&cs=tinysrgb&w=1800"
 ></video>
 
@@ -8268,385 +8318,30 @@ VIEW AMD ON INSTAGRAM →
 GOOGLE REVIEW / PROOF SLIDER
 ========================================================= -->
 
-<section
-class="amd-section amd-reviews"
-id="reviews"
->
-
-
-<div class="amd-section-head amd-reveal">
-
-
-<div class="amd-eyebrow">
-Google Feedback + Customer Proof
+<section class="amd-section amd-reviews" id="reviews">
+<div class="amd-container">
+ <div class="amd-section-head amd-reveal">
+  <div class="amd-eyebrow">Real Google Feedback</div>
+  <h2>Don't Just Take <span class="amd-accent">Our Word For It.</span></h2>
+  <p>Genuine customer feedback. Read the latest reviews directly on Google.</p>
+ </div>
+ <div class="amd-review-wrap"><div class="amd-review-track" aria-label="Customer reviews and Google profile links">
+  <article class="amd-review amd-reveal">
+   <div class="amd-stars" aria-label="5 out of 5 stars">★★★★★</div>
+   <h3>Like It Left the Dealer</h3>
+   <p>“Astonished by how good it came out ... looked exactly how it looked when it left the dealer.”</p>
+   <div class="amd-review-user"><strong>Google customer review</strong><span>Any Means Detailing · Paterson, NJ</span></div>
+   <a class="amd-review-action" href="https://www.google.com/maps/search/?api=1&amp;query=Any%20Means%20Detailing%20Paterson%20NJ" target="_blank" rel="noopener noreferrer">See reviews on Google ↗</a>
+  </article>
+  <article class="amd-review amd-review-google amd-reveal">
+   <div class="amd-stars">GOOGLE</div>
+   <h3>Leave Your Feedback</h3>
+   <p>Already had your car detailed? Share your experience directly on AMD's Google Business Profile.</p>
+   <div class="amd-review-user"><strong>Verified reviews, no made-up testimonials</strong><span>Google Business Profile</span></div>
+   <a class="amd-review-action" href="https://g.page/r/CQajuG1XdjGiEBM/review" target="_blank" rel="noopener noreferrer">Write a Google review ↗</a>
+  </article>
+ </div></div>
 </div>
-
-
-<h2>
-
-The Goal?
-
-<span class="amd-accent">
-Make It Feel New Again.
-</span>
-
-</h2>
-
-
-<p>
-
-AMD currently carries a 5.0 Google rating.
-The live public profile has limited review
-volume available, so this section uses the
-verified feedback that is publicly accessible
-instead of inventing customer quotes.
-
-</p>
-
-
-</div>
-
-
-
-<div class="amd-review-wrap">
-
-
-<div class="amd-review-track">
-
-
-<!-- CARD 1 -->
-
-<div class="amd-review">
-
-
-<div class="amd-stars">
-★★★★★
-</div>
-
-
-<h3>
-Google Review
-</h3>
-
-
-<p>
-
-“Astonished by how good it came out...
-looked exactly how it looked when
-it left the dealer.”
-
-</p>
-
-
-<div class="amd-review-user">
-
-<strong>
-Verified Customer Feedback
-</strong>
-
-<span>
-Any Means Detailing • Google
-</span>
-
-</div>
-
-
-</div>
-
-
-
-<!-- CARD 2 -->
-
-<div class="amd-review">
-
-
-<div class="amd-stars">
-★★★★★
-</div>
-
-
-<h3>
-5.0 Google Rating
-</h3>
-
-
-<p>
-
-Any Means Detailing's current
-Google Business Profile carries
-a perfect 5.0 rating in Paterson,
-New Jersey.
-
-</p>
-
-
-<div class="amd-review-user">
-
-<strong>
-Google Business Profile
-</strong>
-
-<span>
-Paterson, NJ
-</span>
-
-</div>
-
-
-</div>
-
-
-
-<!-- CARD 3 -->
-
-<div class="amd-review">
-
-
-<div class="amd-stars">
-100+
-</div>
-
-
-<h3>
-Cars Transformed
-</h3>
-
-
-<p>
-
-From everyday daily drivers
-to vehicles that need a serious reset,
-AMD has worked across more than
-100 vehicle transformations.
-
-</p>
-
-
-<div class="amd-review-user">
-
-<strong>
-Any Means Detailing
-</strong>
-
-<span>
-Customer Transformation Proof
-</span>
-
-</div>
-
-
-</div>
-
-
-
-<!-- CARD 4 -->
-
-<div class="amd-review">
-
-
-<div class="amd-stars">
-3 YEARS
-</div>
-
-
-<h3>
-Built Through Repetition
-</h3>
-
-
-<p>
-
-Three years of hands-on experience
-means the difference between simply
-washing a vehicle and knowing where
-the details actually hide.
-
-</p>
-
-
-<div class="amd-review-user">
-
-<strong>
-AMD Experience
-</strong>
-
-<span>
-Professional Detailing
-</span>
-
-</div>
-
-
-</div>
-
-
-
-<!-- DUPLICATE FOR CONTINUOUS LOOP -->
-
-<div class="amd-review">
-
-
-<div class="amd-stars">
-★★★★★
-</div>
-
-
-<h3>
-Google Review
-</h3>
-
-
-<p>
-
-“Astonished by how good it came out...
-looked exactly how it looked when
-it left the dealer.”
-
-</p>
-
-
-<div class="amd-review-user">
-
-<strong>
-Verified Customer Feedback
-</strong>
-
-<span>
-Any Means Detailing • Google
-</span>
-
-</div>
-
-
-</div>
-
-
-
-<div class="amd-review">
-
-
-<div class="amd-stars">
-★★★★★
-</div>
-
-
-<h3>
-5.0 Google Rating
-</h3>
-
-
-<p>
-
-Any Means Detailing's current
-Google Business Profile carries
-a perfect 5.0 rating in Paterson,
-New Jersey.
-
-</p>
-
-
-<div class="amd-review-user">
-
-<strong>
-Google Business Profile
-</strong>
-
-<span>
-Paterson, NJ
-</span>
-
-</div>
-
-
-</div>
-
-
-
-<div class="amd-review">
-
-
-<div class="amd-stars">
-100+
-</div>
-
-
-<h3>
-Cars Transformed
-</h3>
-
-
-<p>
-
-From everyday daily drivers
-to vehicles that need a serious reset,
-AMD has worked across more than
-100 vehicle transformations.
-
-</p>
-
-
-<div class="amd-review-user">
-
-<strong>
-Any Means Detailing
-</strong>
-
-<span>
-Customer Transformation Proof
-</span>
-
-</div>
-
-
-</div>
-
-
-
-<div class="amd-review">
-
-
-<div class="amd-stars">
-3 YEARS
-</div>
-
-
-<h3>
-Built Through Repetition
-</h3>
-
-
-<p>
-
-Three years of hands-on experience
-means the difference between simply
-washing a vehicle and knowing where
-the details actually hide.
-
-</p>
-
-
-<div class="amd-review-user">
-
-<strong>
-AMD Experience
-</strong>
-
-<span>
-Professional Detailing
-</span>
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
 </section>
 
 

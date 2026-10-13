@@ -7310,8 +7310,7 @@ required
 
 <div class="amd-consent">
 
-Continue to prepare an email with your detailing request.
-Your request is sent only after you press Send in your email app.
+Your details will be sent securely to Any Means Detailing so we can contact you about your service request.
 
 </div>
 
@@ -7324,7 +7323,7 @@ type="submit"
 class="amd-btn amd-btn-primary"
 style="width:100%;"
 >
-Continue to Email
+SEND MY DETAIL REQUEST
 </button>
 
 </div>
@@ -7342,6 +7341,7 @@ onclick="amdGoStep(4)"
 </button>
 
 
+<input type="text" id="amdHoney" name="website_fax_number" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;opacity:0;pointer-events:none">
 </form>
 
 
@@ -9575,324 +9575,117 @@ SCROLL REVEALS
 LEAD SUBMISSION
 ========================================================= */
 
-window.amdSubmitLead =
-async function(event) {
-
-
+window.amdSubmitLead = async function(event) {
     event.preventDefault();
 
-
-    var name =
-        document.getElementById(
-            "amdName"
-        ).value.trim();
-
-
-    var phone =
-        document.getElementById(
-            "amdPhone"
-        ).value.trim();
-
-
-    var email =
-        document.getElementById(
-            "amdEmail"
-        ).value.trim();
-
-
-    var zip =
-        document.getElementById(
-            "amdZip"
-        ).value.trim();
-
-
-    if (
-        !name ||
-        !phone ||
-        !zip
-    ) {
-
-        alert(
-            "Please enter your name, phone number and ZIP code."
-        );
-
-
-        return false;
-
+    var form = document.getElementById("amdLeadForm");
+    var button = form ? form.querySelector('button[type="submit"]') : null;
+    if (!form || (button && button.disabled)) return false;
+    
+    function value(id) {
+        var field = document.getElementById(id);
+        return field ? field.value.trim().slice(0, 250) : "";
+    }
+    function escapeHtml(s) {
+        return String(s).replace(/[&<>"']/g, function(char) {
+            return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char];
+        });
     }
 
+    var name = value("amdName");
+    var phone = value("amdPhone");
+    var email = value("amdEmail");
+    var zip = value("amdZip");
+    var answers = window.amdAnswers || {};
+    var service = String(answers.service || "").slice(0, 100);
+    var vehicle = String(answers.vehicle || "").slice(0, 100);
+    var condition = String(answers.condition || "").slice(0, 100);
+    var timeline = String(answers.timeline || "").slice(0, 100);
 
-    var lead = {
+    var status = document.getElementById("amdFormStatus");
+    if (!status) {
+        status = document.createElement("p");
+        status.id = "amdFormStatus";
+        status.setAttribute("role", "status");
+        status.setAttribute("aria-live", "polite");
+        status.style.cssText = "margin:12px 0 0;color:#b9d8ff;font-size:13px;line-height:1.55;";
+        if (button) button.parentNode.appendChild(status);
+    }
 
+    if (!name || !phone || !zip || !service || !vehicle || !condition || !timeline) {
+        status.textContent = "Please complete each quiz step and enter your name, phone number, and ZIP code.";
+        return false;
+    }
+    if (value("amdHoney")) return false;
 
-        name:
-            name,
+    var subject = "NEW AMD DETAIL INQUIRY | " +
+        name.replace(/[\r\n]/g, " ") + " | " + service.replace(/[\r\n]/g, " ");
+    var submitted = new Date();
 
-
-        phone:
-            phone,
-
-
-        email:
-            email,
-
-
-        zip:
-            zip,
-
-
-        service:
-            window.amdAnswers.service,
-
-
-        vehicle:
-            window.amdAnswers.vehicle,
-
-
-        condition:
-            window.amdAnswers.condition,
-
-
-        timeline:
-            window.amdAnswers.timeline,
-
-
-        source:
-            "Any Means Detailing Website Quiz",
-
-
-        submitted_at:
-            new Date()
-            .toISOString()
-
+    // FormSubmit sends this form to the recipient inbox after that inbox
+    // confirms its one-time activation email. The table template keeps
+    // all customer details in a scannable, structured notification.
+    var notification = {
+        _subject: subject,
+        _template: "table",
+        _captcha: "false",
+        _honey: "",
+        "name": name,
+        "email": email || "",
+        "CUSTOMER NAME": name,
+        "PHONE NUMBER": phone,
+        "EMAIL ADDRESS": email || "Not provided",
+        "ZIP CODE": zip,
+        "SERVICE REQUESTED": service,
+        "VEHICLE TYPE": vehicle,
+        "VEHICLE CONDITION": condition,
+        "PREFERRED TIMING": timeline,
+        "SUBMITTED (EASTERN)": submitted.toLocaleString("en-US", {timeZone:"America/New_York", dateStyle:"medium", timeStyle:"short"}),
+        "SUBMITTED (UTC)": submitted.toISOString(),
+        "SOURCE": "Any Means Detailing Website Quote Funnel",
+        "WEBSITE PAGE": window.location.origin + window.location.pathname
     };
+    if (email) notification._replyto = email;
 
-
+    var original = button ? button.textContent : "";
+    if (button) {
+        button.disabled = true;
+        button.textContent = "SENDING YOUR REQUEST...";
+        button.style.opacity = ".68";
+    }
+    status.textContent = "Submitting your detail request...";
     try {
+        var response = await fetch("https://formsubmit.co/ajax/anymeans.detailingnj@gmail.com", {
+            method: "POST",
+            headers: {"Content-Type":"application/json","Accept":"application/json"},
+            body: JSON.stringify(notification)
+        });
+        var result = await response.json();
+        if (!response.ok || !result || !(result.success === true || result.success === "true")) {
+            throw new Error("Email notification service did not accept the request.");
+        }
 
-        localStorage.setItem(
-            "any_means_detailing_latest_lead",
-            JSON.stringify(
-                lead
-            )
-        );
-
-    }
-
-    catch(error) {}
-
-
-    /*
-    =========================================================
-    ADD GHL INBOUND WEBHOOK HERE
-    =========================================================
-    */
-
-
-    var GHL_WEBHOOK_URL = "";
-
-    // Until a lead endpoint is connected, offer a real email handoff
-    // rather than incorrectly telling visitors their request was received.
-    if (!GHL_WEBHOOK_URL) {
-        var emailBody = [
-            "New detailing request",
-            "Name: " + name,
-            "Phone: " + phone,
-            "Email: " + (email || "Not provided"),
-            "ZIP: " + zip,
-            "Service: " + lead.service,
-            "Vehicle: " + lead.vehicle,
-            "Condition: " + lead.condition,
-            "Timeline: " + lead.timeline
-        ].join("\n");
-        var emailHref = "mailto:anymeans.detailingnj@gmail.com?subject=" +
-            encodeURIComponent("Detail Request | " + name) +
-            "&body=" + encodeURIComponent(emailBody);
-        var quotePanel = document.getElementById("quote");
-        if (quotePanel) {
-            quotePanel.innerHTML =
-                '<div style="padding:38px 22px;text-align:center;max-width:500px;margin:auto">' +
-                '<h3 style="font-family:Oswald,sans-serif;font-size:34px;text-transform:uppercase">One More Step</h3>' +
-                '<p style="color:#d4dae6">Your request is ready. Open your email app and press Send so the detailing team receives it.</p>' +
-                '<a class="amd-btn amd-btn-primary" href="' + emailHref + '">Open Email to Send Request</a>' +
-                '<p style="color:#9fa6b8;margin-top:24px">Prefer to call? <a href="tel:+18626218676" style="color:#74b9ff">862-621-8676</a></p>' +
+        var panel = document.getElementById("quote");
+        if (panel) {
+            panel.innerHTML = '<div style="padding:42px 24px;text-align:center;max-width:560px;margin:auto">' +
+                '<div style="font-size:40px;color:#74b9ff;margin-bottom:14px">✓</div>' +
+                '<h3 style="font-family:Oswald,sans-serif;font-size:clamp(28px,7vw,40px);text-transform:uppercase;margin:0 0 16px">Request Submitted</h3>' +
+                '<p style="color:#d4dae6;font-size:15px;line-height:1.7">Thanks, ' + escapeHtml(name) + '. Your ' + escapeHtml(service) + ' inquiry has been submitted. Any Means Detailing will review the details and follow up with you.</p>' +
+                '<p style="color:#aebbd3;font-size:13px;margin:18px 0">Need help right away?</p>' +
+                '<a class="amd-btn amd-btn-primary" href="tel:+18626218676">Call 862-621-8676</a>' +
                 '</div>';
+            panel.scrollIntoView({behavior:"smooth",block:"center"});
         }
-        return false;
-    }
-
-
-
-    if (
-        GHL_WEBHOOK_URL &&
-        GHL_WEBHOOK_URL
-        .indexOf(
-            "http"
-        ) === 0
-    ) {
-
-        try {
-
-            await fetch(
-                GHL_WEBHOOK_URL,
-                {
-
-                    method:
-                        "POST",
-
-
-                    headers: {
-
-                        "Content-Type":
-                            "application/json"
-
-                    },
-
-
-                    body:
-                        JSON.stringify(
-                            lead
-                        )
-
-                }
-            );
-
+    } catch (err) {
+        status.textContent = "Your request couldn't be sent. Please try again, or call us at 862-621-8676. Your answers are still here.";
+    } finally {
+        if (button && button.isConnected) {
+            button.disabled = false;
+            button.textContent = original;
+            button.style.opacity = "";
         }
-
-        catch(error) {
-
-            console.log(
-                error
-            );
-
-        }
-
     }
-
-
-    var quote =
-        document.getElementById(
-            "quote"
-        );
-
-
-    if (quote) {
-
-
-        quote.innerHTML =
-
-        '<div style="' +
-
-            'padding:42px 25px;' +
-
-            'display:flex;' +
-
-            'align-items:center;' +
-
-            'justify-content:center;' +
-
-            'text-align:center;' +
-
-        '">' +
-
-
-            '<div>' +
-
-
-                '<div style="' +
-
-                    'width:68px;' +
-
-                    'height:68px;' +
-
-                    'margin:0 auto 18px;' +
-
-                    'display:flex;' +
-
-                    'align-items:center;' +
-
-                    'justify-content:center;' +
-
-                    'border:1px solid #74b9ff;' +
-
-                    'border-radius:50%;' +
-
-                    'background:rgba(116,185,255,.08);' +
-
-                    'color:#74b9ff;' +
-
-                    'font-size:26px;' +
-
-                '">' +
-
-                    '✓' +
-
-                '</div>' +
-
-
-                '<h3 style="' +
-
-                    'margin:0 0 10px;' +
-
-                    'font-family:Oswald,sans-serif;' +
-
-                    'font-size:38px;' +
-
-                    'line-height:1;' +
-
-                    'text-transform:uppercase;' +
-
-                '">' +
-
-                    'Detail Request Received' +
-
-                '</h3>' +
-
-
-                '<p style="' +
-
-                    'max-width:420px;' +
-
-                    'margin:0 auto 23px;' +
-
-                    'color:#9fa6b8;' +
-
-                    'font-size:12px;' +
-
-                '">' +
-
-                    'Thanks, ' +
-
-                    name +
-
-                    '. Any Means Detailing can now review your vehicle and service request.' +
-
-                '</p>' +
-
-
-                '<a ' +
-
-                    'href="tel:+18626218676" ' +
-
-                    'class="amd-btn amd-btn-primary"' +
-
-                '>' +
-
-                    'Call 862-621-8676' +
-
-                '</a>' +
-
-
-            '</div>' +
-
-
-        '</div>';
-
-    }
-
-
     return false;
-
 };
 
 </script>

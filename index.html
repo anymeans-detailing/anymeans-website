@@ -1,0 +1,10060 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#03030a">
+<meta name="description" content="Any Means Detailing provides professional interior, exterior and complete auto detailing in Paterson and North Jersey. Explore our work and request a detail.">
+<title>Any Means Detailing | Professional Auto Detailing in Paterson, NJ</title>
+<!-- =========================================================
+ANY MEANS DETAILING
+PREMIUM GHL CUSTOM HTML WEBSITE
+PATTERSON / NORTH JERSEY
+PURPLE • BLUE • SILVER
+FULL REPLACEMENT
+========================================================= -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap"
+rel="stylesheet"
+>
+
+
+<!-- =========================================================
+CORE INTERACTIONS
+========================================================= -->
+
+<script>
+
+window.amdAnswers = {
+    service: "",
+    vehicle: "",
+    condition: "",
+    timeline: ""
+};
+
+
+window.amdGoStep = function(step) {
+
+    var steps =
+        document.querySelectorAll(
+            "#amd-site .amd-quiz-step"
+        );
+
+
+    for (
+        var i = 0;
+        i < steps.length;
+        i++
+    ) {
+
+        steps[i].style.display =
+            "none";
+
+        steps[i]
+        .classList
+        .remove(
+            "active"
+        );
+
+    }
+
+
+    var target =
+        document.getElementById(
+            "amd-step-" + step
+        );
+
+
+    if (target) {
+
+        target.style.display =
+            "block";
+
+        target
+        .classList
+        .add(
+            "active"
+        );
+
+    }
+
+
+    var label =
+        document.getElementById(
+            "amdStepLabel"
+        );
+
+
+    if (label) {
+
+        label.textContent =
+            "STEP " +
+            step +
+            " OF 5";
+
+    }
+
+
+    var progress =
+        document.getElementById(
+            "amdProgress"
+        );
+
+
+    if (progress) {
+
+        progress.style.width =
+            (step * 20) + "%";
+
+    }
+
+};
+
+
+
+window.amdChoose = function(
+    button,
+    field,
+    value,
+    nextStep
+) {
+
+    window.amdAnswers[field] =
+        value;
+
+
+    var step =
+        button.closest(
+            ".amd-quiz-step"
+        );
+
+
+    if (step) {
+
+        var options =
+            step.querySelectorAll(
+                ".amd-option"
+            );
+
+
+        for (
+            var i = 0;
+            i < options.length;
+            i++
+        ) {
+
+            options[i]
+            .classList
+            .remove(
+                "selected"
+            );
+
+        }
+
+    }
+
+
+    button
+    .classList
+    .add(
+        "selected"
+    );
+
+
+    setTimeout(
+        function() {
+
+            window.amdGoStep(
+                nextStep
+            );
+
+        },
+        100
+    );
+
+};
+
+
+
+window.amdScrollQuote =
+function() {
+
+    var quote =
+        document.getElementById(
+            "quote"
+        );
+
+
+    if (!quote) return;
+
+
+    quote.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+
+    window.amdCloseMenu();
+
+};
+
+
+
+window.amdPreselect =
+function(service) {
+
+    window.amdAnswers.service =
+        service;
+
+
+    window.amdGoStep(2);
+
+
+    window.amdScrollQuote();
+
+};
+
+
+
+window.amdUpdateSlider =
+function(input) {
+
+    var slider =
+        document.getElementById(
+            "amdBeforeAfter"
+        );
+
+
+    if (!slider) return;
+
+
+    slider.style.setProperty(
+        "--amd-pos",
+        input.value + "%"
+    );
+
+};
+
+
+
+window.amdToggleFaq =
+function(button) {
+
+    var item =
+        button.parentElement;
+
+
+    var items =
+        document.querySelectorAll(
+            ".amd-faq-item"
+        );
+
+
+    var open =
+        item.classList.contains(
+            "open"
+        );
+
+
+    for (
+        var i = 0;
+        i < items.length;
+        i++
+    ) {
+
+        items[i]
+        .classList
+        .remove(
+            "open"
+        );
+
+
+        var symbol =
+            items[i]
+            .querySelector(
+                ".amd-faq-symbol"
+            );
+
+
+        if (symbol) {
+
+            symbol.textContent =
+                "+";
+
+        }
+
+    }
+
+
+    if (!open) {
+
+        item
+        .classList
+        .add(
+            "open"
+        );
+
+
+        var symbol =
+            button.querySelector(
+                ".amd-faq-symbol"
+            );
+
+
+        if (symbol) {
+
+            symbol.textContent =
+                "−";
+
+        }
+
+    }
+
+};
+
+
+
+window.amdOpenMenu =
+function() {
+
+    var menu =
+        document.getElementById(
+            "amdMobileMenu"
+        );
+
+
+    if (menu) {
+
+        menu
+        .classList
+        .add(
+            "active"
+        );
+
+    }
+
+};
+
+
+
+window.amdCloseMenu =
+function() {
+
+    var menu =
+        document.getElementById(
+            "amdMobileMenu"
+        );
+
+
+    if (menu) {
+
+        menu
+        .classList
+        .remove(
+            "active"
+        );
+
+    }
+
+};
+
+</script>
+
+
+<style>
+
+/* =========================================================
+GHL FULL-BLEED RESET
+========================================================= */
+
+html,
+body {
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    width: 100% !important;
+
+    overflow-x: hidden !important;
+
+    background:
+        #03030a !important;
+}
+
+
+#amd-site,
+#amd-site *,
+#amd-site *::before,
+#amd-site *::after {
+
+    box-sizing:
+        border-box;
+}
+
+
+#amd-site {
+
+    --black:
+        #03030a;
+
+    --black2:
+        #080712;
+
+    --navy:
+        #0b0b24;
+
+    --panel:
+        #10102d;
+
+    --purple:
+        #45298d;
+
+    --purple2:
+        #6546d4;
+
+    --purple3:
+        #8e78ff;
+
+    --blue:
+        #367ee8;
+
+    --blue2:
+        #74b9ff;
+
+    --silver:
+        #d4dae6;
+
+    --white:
+        #f7f8fc;
+
+    --muted:
+        #9fa6b8;
+
+
+    /*
+    =========================================================
+    USER-UPLOADED AMD LOGO
+    EMBEDDED DIRECTLY INTO CODE
+    =========================================================
+    */
+
+    --amd-logo:
+        url("data:image/webp;base64,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");
+
+
+    width:
+        100vw !important;
+
+    max-width:
+        none !important;
+
+    margin:
+        0 !important;
+
+    margin-left:
+        calc(50% - 50vw) !important;
+
+    margin-right:
+        calc(50% - 50vw) !important;
+
+    padding:
+        0 !important;
+
+    overflow:
+        hidden;
+
+    background:
+        var(--black);
+
+    color:
+        var(--white);
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    line-height:
+        1.6;
+}
+
+
+#amd-site img {
+
+    display:
+        block;
+
+    width:
+        100%;
+
+    max-width:
+        100%;
+}
+
+
+#amd-site a {
+
+    color:
+        inherit;
+
+    text-decoration:
+        none;
+}
+
+
+#amd-site button,
+#amd-site input {
+
+    font-family:
+        inherit;
+}
+
+
+#amd-site button {
+
+    cursor:
+        pointer;
+}
+
+
+#amd-site h1,
+#amd-site h2,
+#amd-site h3,
+#amd-site h4,
+#amd-site p {
+
+    margin-top:
+        0;
+}
+
+
+/* =========================================================
+GENERAL
+========================================================= */
+
+.amd-container {
+
+    width:
+        min(
+            1320px,
+            calc(100% - 48px)
+        );
+
+    margin:
+        0 auto;
+}
+
+
+.amd-section {
+
+    position:
+        relative;
+
+    padding:
+        105px 0;
+}
+
+
+.amd-accent {
+
+    color:
+        var(--blue2);
+}
+
+
+.amd-purple {
+
+    color:
+        var(--purple3);
+}
+
+
+.amd-eyebrow {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    margin-bottom:
+        16px;
+
+    color:
+        var(--blue2);
+
+    font-size:
+        9px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .18em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.amd-eyebrow::before {
+
+    content:
+        "";
+
+    width:
+        34px;
+
+    height:
+        2px;
+
+    background:
+        var(--purple3);
+}
+
+
+.amd-section-head {
+
+    max-width:
+        880px;
+
+    margin:
+        0 auto 48px;
+
+    text-align:
+        center;
+}
+
+
+.amd-section-head h2 {
+
+    margin-bottom:
+        16px;
+
+    font-family:
+        "Oswald",
+        sans-serif;
+
+    font-size:
+        clamp(
+            46px,
+            6vw,
+            79px
+        );
+
+    line-height:
+        .94;
+
+    letter-spacing:
+        -.04em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.amd-section-head p {
+
+    max-width:
+        700px;
+
+    margin:
+        0 auto;
+
+    color:
+        var(--muted);
+
+    font-size:
+        14px;
+}
+
+
+/* =========================================================
+BUTTONS
+========================================================= */
+
+.amd-btn {
+
+    min-height:
+        56px;
+
+    padding:
+        0 26px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        9px;
+
+    border:
+        1px solid
+        transparent;
+
+    border-radius:
+        11px;
+
+    font-size:
+        12px;
+
+    font-weight:
+        800;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.amd-btn:hover {
+
+    transform:
+        translateY(-2px);
+}
+
+
+.amd-btn-primary {
+
+    color:
+        white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7658f0,
+            #367ee8
+        );
+
+    box-shadow:
+        0 16px 50px
+        rgba(84,76,220,.32);
+}
+
+
+.amd-btn-primary:hover {
+
+    box-shadow:
+        0 22px 60px
+        rgba(84,76,220,.48);
+}
+
+
+.amd-btn-outline {
+
+    color:
+        white;
+
+    border-color:
+        rgba(255,255,255,.22);
+
+    background:
+        rgba(5,5,14,.43);
+
+    backdrop-filter:
+        blur(12px);
+}
+
+
+/* =========================================================
+HEADER
+========================================================= */
+
+.amd-header {
+
+    position:
+        absolute;
+
+    z-index:
+        1000;
+
+    top:
+        0;
+
+    left:
+        0;
+
+    width:
+        100%;
+
+    height:
+        92px;
+
+    border-bottom:
+        1px solid
+        rgba(116,185,255,.17);
+
+    background:
+        rgba(3,3,10,.88);
+
+    backdrop-filter:
+        blur(18px);
+}
+
+
+.amd-header-inner {
+
+    width:
+        min(
+            1420px,
+            calc(100% - 42px)
+        );
+
+    height:
+        100%;
+
+    margin:
+        0 auto;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        24px;
+}
+
+
+.amd-brand {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    flex-shrink:
+        0;
+}
+
+
+.amd-logo {
+
+    width:
+        64px;
+
+    height:
+        64px;
+
+    flex-shrink:
+        0;
+
+    border-radius:
+        50%;
+
+    background-image:
+        var(--amd-logo);
+
+    background-size:
+        cover;
+
+    background-position:
+        center;
+
+    box-shadow:
+        0 0 0 1px
+        rgba(117,151,255,.32),
+        0 0 32px
+        rgba(89,63,211,.22);
+}
+
+
+.amd-wordmark {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+}
+
+
+.amd-wordmark strong {
+
+    font-family:
+        "Oswald",
+        sans-serif;
+
+    font-size:
+        24px;
+
+    line-height:
+        .95;
+
+    letter-spacing:
+        -.02em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.amd-wordmark strong span {
+
+    color:
+        var(--blue2);
+}
+
+
+.amd-wordmark small {
+
+    margin-top:
+        6px;
+
+    color:
+        #a9a1f5;
+
+    font-size:
+        6px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .18em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.amd-nav {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        23px;
+}
+
+
+.amd-nav a {
+
+    color:
+        rgba(255,255,255,.80);
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+}
+
+
+.amd-nav a:hover {
+
+    color:
+        var(--blue2);
+}
+
+
+.amd-header-actions {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        13px;
+}
+
+
+.amd-phone {
+
+    white-space:
+        nowrap;
+
+    font-size:
+        10px;
+
+    font-weight:
+        800;
+}
+
+
+.amd-phone span {
+
+    color:
+        var(--blue2);
+}
+
+
+.amd-header
+.amd-btn {
+
+    min-height:
+        46px;
+
+    padding:
+        0 17px;
+
+    font-size:
+        10px;
+}
+
+
+.amd-menu-btn {
+
+    display:
+        none;
+
+    width:
+        44px;
+
+    height:
+        44px;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex-direction:
+        column;
+
+    gap:
+        5px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    border-radius:
+        9px;
+
+    background:
+        transparent;
+}
+
+
+.amd-menu-btn span {
+
+    width:
+        19px;
+
+    height:
+        2px;
+
+    background:
+        white;
+}
+
+
+/* =========================================================
+MOBILE MENU
+========================================================= */
+
+.amd-mobile-menu {
+
+    position:
+        fixed;
+
+    z-index:
+        3000;
+
+    inset:
+        0;
+
+    display:
+        none;
+
+    padding:
+        95px 25px 30px;
+
+    background:
+        rgba(3,3,10,.995);
+}
+
+
+.amd-mobile-menu.active {
+
+    display:
+        block;
+}
+
+
+.amd-mobile-close {
+
+    position:
+        absolute;
+
+    top:
+        20px;
+
+    right:
+        22px;
+
+    width:
+        45px;
+
+    height:
+        45px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.16);
+
+    border-radius:
+        50%;
+
+    background:
+        transparent;
+
+    color:
+        white;
+
+    font-size:
+        25px;
+}
+
+
+.amd-mobile-menu nav {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+}
+
+
+.amd-mobile-menu nav a {
+
+    padding:
+        15px 0;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.08);
+
+    font-family:
+        "Oswald",
+        sans-serif;
+
+    font-size:
+        27px;
+
+    text-transform:
+        uppercase;
+}
+
+
+.amd-mobile-menu
+.amd-btn {
+
+    width:
+        100%;
+
+    margin-top:
+        28px;
+}
+
+
+/* =========================================================
+HERO
+========================================================= */
+
+.amd-hero {
+
+    position:
+        relative;
+
+    min-height:
+        960px;
+
+    padding:
+        145px 0 75px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    overflow:
+        hidden;
+
+    background:
+        var(--black);
+}
+
+
+.amd-hero-media {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    overflow:
+        hidden;
+}
+
+
+.amd-hero-poster {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    object-position:
+        center;
+}
+
+
+#amdHeroVideo {
+
+    position:
+        absolute;
+
+    z-index:
+        2;
+
+    inset:
+        0;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    object-position:
+        center;
+
+    background:
+        transparent;
+}
+
+
+.amd-hero-overlay {
+
+    position:
+        absolute;
+
+    z-index:
+        3;
+
+    inset:
+        0;
+
+    background:
+
+        linear-gradient(
+            90deg,
+
+            rgba(3,3,10,.98)
+            0%,
+
+            rgba(3,3,10,.91)
+            30%,
+
+            rgba(3,3,10,.61)
+            53%,
+
+            rgba(3,3,10,.30)
+            73%,
+
+            rgba(3,3,10,.57)
+            100%
+        ),
+
+        linear-gradient(
+            0deg,
+
+            rgba(3,3,10,.99),
+            transparent 45%
+        );
+}
+
+
+.amd-hero-grid {
+
+    position:
+        absolute;
+
+    z-index:
+        4;
+
+    inset:
+        0;
+
+    opacity:
+        .10;
+
+    background-image:
+
+        linear-gradient(
+            rgba(116,185,255,.17)
+            1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(142,120,255,.17)
+            1px,
+            transparent 1px
+        );
+
+    background-size:
+        82px 82px;
+}
+
+
+.amd-hero-glow {
+
+    position:
+        absolute;
+
+    z-index:
+        4;
+
+    width:
+        680px;
+
+    height:
+        680px;
+
+    right:
+        -180px;
+
+    top:
+        60px;
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(90,70,220,.24),
+            transparent 68%
+        );
+}
+
+
+.amd-hero-inner {
+
+    position:
+        relative;
+
+    z-index:
+        10;
+
+    width:
+        min(
+            1380px,
+            calc(100% - 48px)
+        );
+
+    margin:
+        0 auto;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(0,.94fr)
+        minmax(430px,.76fr);
+
+    gap:
+        72px;
+
+    align-items:
+        center;
+}
+
+
+.amd-location {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        9px;
+
+    margin-bottom:
+        20px;
+
+    padding:
+        9px 14px;
+
+    border:
+        1px solid
+        rgba(116,185,255,.40);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(44,59,140,.25);
+
+    color:
+        var(--blue2);
+
+    font-size:
+        8px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .15em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.amd-location i {
+
+    width:
+        7px;
+
+    height:
+        7px;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--purple3);
+
+    box-shadow:
+        0 0 0 5px
+        rgba(142,120,255,.12);
+}
+
+
+.amd-hero h1 {
+
+    margin-bottom:
+        22px;
+
+    font-family:
+        "Oswald",
+        sans-serif;
+
+    font-size:
+        clamp(
+            64px,
+            7vw,
+            104px
+        );
+
+    line-height:
+        .87;
+
+    letter-spacing:
+        -.05em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.amd-hero h1 span {
+
+    display:
+        block;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--purple3),
+            var(--blue2)
+        );
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    color:
+        transparent;
+}
+
+
+.amd-hero-copy > p {
+
+    max-width:
+        610px;
+
+    margin-bottom:
+        27px;
+
+    color:
+        rgba(255,255,255,.76);
+
+    font-size:
+        14px;
+
+    line-height:
+        1.72;
+}
+
+
+.amd-hero-actions {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        10px;
+}
+
+
+.amd-hero-proof {
+
+    margin-top:
+        27px;
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        18px;
+
+    color:
+        rgba(255,255,255,.68);
+
+    font-size:
+        9px;
+}
+
+
+.amd-proof span {
+
+    margin-right:
+        4px;
+
+    color:
+        var(--blue2);
+}
+
+
+/* =========================================================
+QUIZ
+NO FIXED HEIGHT
+NO EMPTY DEAD SPACE
+========================================================= */
+
+.amd-quiz {
+
+    position:
+        relative;
+
+    height:
+        auto !important;
+
+    min-height:
+        0 !important;
+
+    padding:
+        28px;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        rgba(116,185,255,.36);
+
+    border-radius:
+        24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(31,24,79,.97),
+            rgba(8,8,27,.98)
+        );
+
+    box-shadow:
+        0 35px 100px
+        rgba(0,0,0,.52);
+}
+
+
+.amd-quiz::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        300px;
+
+    height:
+        300px;
+
+    right:
+        -135px;
+
+    top:
+        -160px;
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(116,185,255,.15),
+            transparent 70%
+        );
+
+    pointer-events:
+        none;
+}
+
+
+.amd-quiz-top {
+
+    position:
+        relative;
+
+    z-index:
+        3;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        20px;
+
+    margin-bottom:
+        24px;
+}
+
+
+.amd-step-label {
+
+    color:
+        var(--blue2);
+
+    font-size:
+        9px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .13em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.amd-progress {
+
+    width:
+        48%;
+
+    height:
+        5px;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(255,255,255,.11);
+}
+
+
+.amd-progress-fill {
+
+    display:
+        block;
+
+    width:
+        20%;
+
+    height:
+        100%;
+
+    border-radius:
+        inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--purple3),
+            var(--blue2)
+        );
+
+    transition:
+        width .25s ease;
+}
+
+
+.amd-quiz-step {
+
+    position:
+        relative;
+
+    z-index:
+        3;
+
+    display:
+        none;
+}
+
+
+#amd-step-1 {
+
+    display:
+        block;
+}
+
+
+.amd-quiz-step.active {
+
+    display:
+        block;
+}
+
+
+.amd-quiz-step h2 {
+
+    margin-bottom:
+        5px;
+
+    font-family:
+        "Oswald",
+        sans-serif;
+
+    font-size:
+        34px;
+
+    line-height:
+        1.04;
+
+    text-transform:
+        uppercase;
+}
+
+
+.amd-quiz-step > p {
+
+    margin-bottom:
+        18px;
+
+    color:
+        #aaaac0;
+
+    font-size:
+        11px;
+}
+
+
+.amd-options {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        10px;
+}
+
+
+.amd-option {
+
+    min-height:
+        100px;
+
+    padding:
+        13px;
+
+    text-align:
+        left;
+
+    border:
+        1px solid
+        rgba(255,255,255,.13);
+
+    border-radius:
+        13px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    color:
+        white;
+
+    transition:
+        transform .18s ease,
+        border-color .18s ease,
+        background .18s ease;
+}
+
+
+.amd-option:hover {
+
+    transform:
+        translateY(-2px);
+
+    border-color:
+        var(--blue2);
+
+    background:
+        rgba(116,185,255,.08);
+}
+
+
+.amd-option.selected {
+
+    border-color:
+        var(--blue2);
+
+    background:
+        rgba(116,185,255,.13);
+}
+
+
+.amd-option-icon {
+
+    width:
+        34px;
+
+    height:
+        34px;
+
+    margin-bottom:
+        8px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        1px solid
+        rgba(142,120,255,.34);
+
+    border-radius:
+        9px;
+
+    background:
+        rgba(142,120,255,.08);
+
+    color:
+        var(--purple3);
+
+    font-size:
+        11px;
+
+    font-weight:
+        900;
+}
+
+
+.amd-option strong {
+
+    display:
+        block;
+
+    margin-bottom:
+        2px;
+
+    font-size:
+        11px;
+}
+
+
+.amd-option small {
+
+    display:
+        block;
+
+    color:
+        #9c9cb0;
+
+    font-size:
+        8px;
+
+    line-height:
+        1.4;
+}
+
+
+.amd-quiz-back {
+
+    margin-top:
+        15px;
+
+    padding:
+        0;
+
+    border:
+        0;
+
+    background:
+        transparent;
+
+    color:
+        #9999ad;
+
+    font-size:
+        9px;
+
+    font-weight:
+        700;
+}
+
+
+.amd-quiz-footer {
+
+    position:
+        relative !important;
+
+    left:
+        auto !important;
+
+    right:
+        auto !important;
+
+    bottom:
+        auto !important;
+
+    margin-top:
+        18px;
+
+    padding-top:
+        14px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.08);
+
+    color:
+        #8f8fa3;
+
+    font-size:
+        8px;
+}
+
+
+/* =========================================================
+FORM
+========================================================= */
+
+.amd-form-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        10px;
+}
+
+
+.amd-field {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        5px;
+}
+
+
+.amd-field.full {
+
+    grid-column:
+        1 / -1;
+}
+
+
+.amd-field label {
+
+    color:
+        rgba(255,255,255,.64);
+
+    font-size:
+        7px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .09em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.amd-field input {
+
+    width:
+        100%;
+
+    height:
+        47px;
+
+    padding:
+        0 12px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.14);
+
+    border-radius:
+        8px;
+
+    outline:
+        none;
+
+    background:
+        rgba(0,0,0,.22);
+
+    color:
+        white;
+}
+
+
+.amd-field input:focus {
+
+    border-color:
+        var(--blue2);
+}
+
+
+.amd-consent {
+
+    grid-column:
+        1 / -1;
+
+    color:
+        #7f7f94;
+
+    font-size:
+        7px;
+
+    line-height:
+        1.5;
+}
+
+
+/* =========================================================
+COUNTER STRIP
+========================================================= */
+
+.amd-stats {
+
+    position:
+        relative;
+
+    z-index:
+        30;
+
+    border-top:
+        1px solid
+        rgba(116,185,255,.16);
+
+    border-bottom:
+        1px solid
+        rgba(142,120,255,.16);
+
+    background:
+        linear-gradient(
+            90deg,
+            #0a091e,
+            #111032,
+            #0a091e
+        );
+}
+
+
+.amd-stats-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+}
+
+
+.amd-stat {
+
+    min-height:
+        165px;
+
+    padding:
+        28px 20px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+    border-right:
+        1px solid
+        rgba(255,255,255,.08);
+}
+
+
+.amd-stat:last-child {
+
+    border-right:
+        0;
+}
+
+
+.amd-stat strong {
+
+    display:
+        block;
+
+    margin-bottom:
+        3px;
+
+    font-family:
+        "Oswald",
+        sans-serif;
+
+    font-size:
+        clamp(
+            52px,
+            6vw,
+            76px
+        );
+
+    line-height:
+        1;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            var(--blue2),
+            var(--purple3)
+        );
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    color:
+        transparent;
+}
+
+
+.amd-stat span {
+
+    color:
+        #afb0c2;
+
+    font-size:
+        9px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .13em;
+
+    text-transform:
+        uppercase;
+}
+
+
+/* =========================================================
+BEFORE / AFTER
+SAME IMAGE / SAME GEOMETRY
+ONLY THE REVEAL LINE MOVES
+========================================================= */
+
+.amd-transform {
+
+    background:
+
+        radial-gradient(
+            circle at 18% 45%,
+            rgba(77,41,141,.20),
+            transparent 38%
+        ),
+
+        #080717;
+}
+
+
+.amd-transform-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1.08fr .92fr;
+
+    gap:
+        68px;
+
+    align-items:
+        center;
+}
+
+
+.amd-ba-shell {
+
+    position:
+        relative;
+
+    width:
+        100%;
+
+    aspect-ratio:
+        16 / 11;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        rgba(116,185,255,.28);
+
+    border-radius:
+        25px;
+
+    background:
+        #101026;
+
+    box-shadow:
+        0 35px 95px
+        rgba(0,0,0,.52);
+
+    --amd-pos:
+        50%;
+
+    isolation:
+        isolate;
+}
+
+
+.amd-ba-layer {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    overflow:
+        hidden;
+}
+
+
+.amd-ba-layer img {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    width:
+        100% !important;
+
+    height:
+        100% !important;
+
+    max-width:
+        none !important;
+
+    object-fit:
+        cover !important;
+
+    object-position:
+        center !important;
+
+    transform:
+        none !important;
+
+    pointer-events:
+        none;
+}
+
+
+.amd-ba-after {
+
+    z-index:
+        1;
+}
+
+
+.amd-ba-before {
+
+    z-index:
+        2;
+
+    clip-path:
+        inset(
+            0
+            calc(
+                100% -
+                var(--amd-pos)
+            )
+            0
+            0
+        );
+}
+
+
+.amd-ba-before img {
+
+    filter:
+        brightness(.56)
+        saturate(.45)
+        contrast(.92)
+        sepia(.13);
+}
+
+
+.amd-ba-before::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+
+        radial-gradient(
+            circle at 18% 25%,
+            rgba(150,130,105,.27) 0 2px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 31% 42%,
+            rgba(170,150,120,.20) 0 4px,
+            transparent 5px
+        ),
+
+        radial-gradient(
+            circle at 66% 30%,
+            rgba(145,125,100,.24) 0 3px,
+            transparent 4px
+        ),
+
+        radial-gradient(
+            circle at 76% 61%,
+            rgba(160,140,105,.22) 0 5px,
+            transparent 6px
+        ),
+
+        linear-gradient(
+            115deg,
+            rgba(130,110,85,.08),
+            rgba(180,165,140,.15)
+        );
+
+    background-size:
+        47px 43px,
+        73px 69px,
+        57px 61px,
+        91px 84px,
+        auto;
+
+    mix-blend-mode:
+        screen;
+
+    opacity:
+        .78;
+
+    pointer-events:
+        none;
+}
+
+
+.amd-ba-label {
+
+    position:
+        absolute;
+
+    z-index:
+        7;
+
+    top:
+        18px;
+
+    padding:
+        8px 13px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.17);
+
+    border-radius:
+        999px;
+
+    backdrop-filter:
+        blur(10px);
+
+    font-size:
+        8px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .14em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.amd-ba-label.before {
+
+    left:
+        18px;
+
+    background:
+        rgba(10,8,28,.83);
+}
+
+
+.amd-ba-label.after {
+
+    right:
+        18px;
+
+    color:
+        white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple2),
+            var(--blue)
+        );
+}
+
+
+.amd-ba-divider {
+
+    position:
+        absolute;
+
+    z-index:
+        8;
+
+    left:
+        var(--amd-pos);
+
+    top:
+        0;
+
+    width:
+        2px;
+
+    height:
+        100%;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        white;
+
+    box-shadow:
+        0 0 25px
+        rgba(255,255,255,.45);
+
+    pointer-events:
+        none;
+}
+
+
+.amd-ba-handle {
+
+    position:
+        absolute;
+
+    z-index:
+        9;
+
+    left:
+        var(--amd-pos);
+
+    top:
+        50%;
+
+    width:
+        62px;
+
+    height:
+        62px;
+
+    transform:
+        translate(-50%,-50%);
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        2px solid
+        white;
+
+    border-radius:
+        50%;
+
+    color:
+        white;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--purple2),
+            #192f6c
+        );
+
+    pointer-events:
+        none;
+
+    box-shadow:
+        0 14px 36px
+        rgba(0,0,0,.52);
+}
+
+
+.amd-ba-input {
+
+    position:
+        absolute;
+
+    z-index:
+        20;
+
+    inset:
+        0;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    margin:
+        0;
+
+    opacity:
+        0;
+
+    cursor:
+        ew-resize;
+
+    touch-action:
+        pan-y;
+}
+
+
+.amd-transform-copy h2 {
+
+    margin-bottom:
+        20px;
+
+    font-family:
+        "Oswald",
+        sans-serif;
+
+    font-size:
+        clamp(
+            49px,
+            5.8vw,
+            76px
+        );
+
+    line-height:
+        .94;
+
+    letter-spacing:
+        -.04em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.amd-transform-copy > p {
+
+    margin-bottom:
+        27px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        14px;
+}
+
+
+.amd-result-list {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        10px;
+
+    margin-bottom:
+        29px;
+}
+
+
+.amd-result {
+
+    padding:
+        14px 15px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    border-radius:
+        12px;
+
+    background:
+        rgba(255,255,255,.025);
+}
+
+
+.amd-result-icon {
+
+    width:
+        36px;
+
+    height:
+        36px;
+
+    flex-shrink:
+        0;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        1px solid
+        rgba(116,185,255,.29);
+
+    border-radius:
+        9px;
+
+    color:
+        var(--blue2);
+}
+
+
+.amd-result strong {
+
+    display:
+        block;
+
+    font-size:
+        11px;
+}
+
+
+.amd-result small {
+
+    display:
+        block;
+
+    color:
+        var(--muted);
+
+    font-size:
+        8px;
+}
+
+
+/* =========================================================
+PICK YOUR SERVICE
+========================================================= */
+
+.amd-services {
+
+    background:
+        var(--black);
+}
+
+
+.amd-service-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:
+        14px;
+}
+
+
+.amd-service {
+
+    position:
+        relative;
+
+    min-height:
+        505px;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        rgba(255,255,255,.09);
+
+    border-radius:
+        19px;
+
+    background:
+        #111127;
+}
+
+
+.amd-service img {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    transition:
+        transform .55s ease;
+}
+
+
+.amd-service:hover img {
+
+    transform:
+        scale(1.04);
+}
+
+
+.amd-service::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+        linear-gradient(
+            0deg,
+
+            rgba(3,3,10,.99)
+            0%,
+
+            rgba(3,3,10,.78)
+            45%,
+
+            rgba(3,3,10,.08)
+            81%
+        );
+}
+
+
+.amd-service-copy {
+
+    position:
+        absolute;
+
+    z-index:
+        3;
+
+    left:
+        20px;
+
+    right:
+        20px;
+
+    bottom:
+        20px;
+}
+
+
+.amd-service-num {
+
+    margin-bottom:
+        7px;
+
+    color:
+        var(--blue2);
+
+    font-size:
+        8px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .14em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.amd-service h3 {
+
+    margin-bottom:
+        8px;
+
+    font-family:
+        "Oswald",
+        sans-serif;
+
+    font-size:
+        27px;
+
+    line-height:
+        1;
+
+    text-transform:
+        uppercase;
+}
+
+
+.amd-service p {
+
+    min-height:
+        59px;
+
+    margin-bottom:
+        15px;
+
+    color:
+        rgba(255,255,255,.68);
+
+    font-size:
+        10px;
+}
+
+
+/*
+ALL SERVICE PICKER BUTTONS
+EXACT SAME STYLE
+*/
+
+.amd-service button {
+
+    width:
+        100%;
+
+    min-height:
+        46px;
+
+    padding:
+        0 13px;
+
+    border:
+        0;
+
+    border-radius:
+        9px;
+
+    color:
+        white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7255e8,
+            #327fe5
+        );
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.amd-service button:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(89,75,220,.30);
+}
+
+
+/* =========================================================
+DETAIL STANDARD
+========================================================= */
+
+.amd-standard {
+
+    background:
+
+        radial-gradient(
+            circle at 72% 47%,
+            rgba(83,63,207,.17),
+            transparent 37%
+        ),
+
+        #09081b;
+}
+
+
+.amd-standard-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        .92fr 1.08fr;
+
+    gap:
+        65px;
+
+    align-items:
+        center;
+}
+
+
+.amd-standard-copy h2 {
+
+    margin-bottom:
+        20px;
+
+    font-family:
+        "Oswald",
+        sans-serif;
+
+    font-size:
+        clamp(
+            48px,
+            5.7vw,
+            76px
+        );
+
+    line-height:
+        .94;
+
+    text-transform:
+        uppercase;
+}
+
+
+.amd-standard-copy > p {
+
+    margin-bottom:
+        28px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        14px;
+}
+
+
+.amd-benefits {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        11px;
+}
+
+
+.amd-benefit {
+
+    min-height:
+        148px;
+
+    padding:
+        18px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    border-radius:
+        14px;
+
+    background:
+        rgba(255,255,255,.025);
+}
+
+
+.amd-benefit strong {
+
+    display:
+        block;
+
+    margin-bottom:
+        5px;
+
+    font-family:
+        "Oswald",
+        sans-serif;
+
+    font-size:
+        17px;
+
+    text-transform:
+        uppercase;
+}
+
+
+.amd-benefit p {
+
+    margin:
+        0;
+
+    color:
+        var(--muted);
+
+    font-size:
+        9px;
+}
+
+
+.amd-standard-photo {
+
+    position:
+        relative;
+
+    min-height:
+        650px;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        rgba(116,185,255,.15);
+
+    border-radius:
+        24px;
+}
+
+
+.amd-standard-photo img {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+}
+
+
+/* =========================================================
+VISUAL DETAILING GALLERY
+========================================================= */
+
+.amd-gallery {
+
+    background:
+        var(--black);
+}
+
+
+.amd-gallery-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1.15fr .85fr .85fr;
+
+    grid-template-rows:
+        280px 280px;
+
+    gap:
+        12px;
+}
+
+
+.amd-gallery-card {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    border-radius:
+        17px;
+
+    background:
+        #111127;
+}
+
+
+.amd-gallery-card:first-child {
+
+    grid-row:
+        1 / 3;
+}
+
+
+.amd-gallery-card img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    transition:
+        transform .6s ease;
+}
+
+
+.amd-gallery-card:hover
+img {
+
+    transform:
+        scale(1.04);
+}
+
+
+.amd-gallery-card::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+        linear-gradient(
+            0deg,
+            rgba(3,3,10,.76),
+            transparent 60%
+        );
+}
+
+
+.amd-gallery-label {
+
+    position:
+        absolute;
+
+    z-index:
+        4;
+
+    left:
+        18px;
+
+    bottom:
+        16px;
+
+    color:
+        var(--blue2);
+
+    font-family:
+        "Oswald",
+        sans-serif;
+
+    font-size:
+        15px;
+
+    text-transform:
+        uppercase;
+}
+
+
+.amd-gallery-note {
+
+    position:
+        absolute;
+
+    z-index:
+        4;
+
+    top:
+        14px;
+
+    right:
+        14px;
+
+    padding:
+        7px 10px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(3,3,10,.74);
+
+    color:
+        rgba(255,255,255,.71);
+
+    font-size:
+        6px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .10em;
+
+    text-transform:
+        uppercase;
+}
+
+
+/* =========================================================
+INSTAGRAM CTA
+========================================================= */
+
+.amd-instagram {
+
+    padding:
+        34px;
+
+    margin-top:
+        18px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        30px;
+
+    border:
+        1px solid
+        rgba(142,120,255,.23);
+
+    border-radius:
+        18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(74,41,147,.22),
+            rgba(31,57,120,.20)
+        );
+}
+
+
+.amd-instagram h3 {
+
+    margin-bottom:
+        5px;
+
+    font-family:
+        "Oswald",
+        sans-serif;
+
+    font-size:
+        25px;
+
+    text-transform:
+        uppercase;
+}
+
+
+.amd-instagram p {
+
+    margin:
+        0;
+
+    color:
+        var(--muted);
+
+    font-size:
+        10px;
+}
+
+
+/* =========================================================
+REVIEWS / CUSTOMER PROOF SLIDER
+========================================================= */
+
+.amd-reviews {
+
+    overflow:
+        hidden;
+
+    background:
+        #0b0a21;
+}
+
+
+.amd-review-wrap {
+
+    overflow:
+        hidden;
+}
+
+
+.amd-review-track {
+
+    width:
+        max-content;
+
+    display:
+        flex;
+
+    gap:
+        15px;
+
+    animation:
+        amdReviews
+        38s linear infinite;
+}
+
+
+.amd-review-track:hover {
+
+    animation-play-state:
+        paused;
+}
+
+
+@keyframes amdReviews {
+
+    from {
+
+        transform:
+            translateX(0);
+    }
+
+    to {
+
+        transform:
+            translateX(-50%);
+    }
+
+}
+
+
+.amd-review {
+
+    width:
+        390px;
+
+    min-height:
+        290px;
+
+    flex-shrink:
+        0;
+
+    padding:
+        28px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    border:
+        1px solid
+        rgba(116,185,255,.18);
+
+    border-radius:
+        20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #171637,
+            #090919
+        );
+}
+
+
+.amd-stars {
+
+    margin-bottom:
+        17px;
+
+    color:
+        #ffd86a;
+
+    letter-spacing:
+        3px;
+
+    font-size:
+        15px;
+}
+
+
+.amd-review h3 {
+
+    margin-bottom:
+        9px;
+
+    font-family:
+        "Oswald",
+        sans-serif;
+
+    font-size:
+        20px;
+
+    text-transform:
+        uppercase;
+}
+
+
+.amd-review p {
+
+    color:
+        #e4e7f0;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.72;
+}
+
+
+.amd-review-user {
+
+    margin-top:
+        auto;
+
+    padding-top:
+        17px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.08);
+}
+
+
+.amd-review-user strong {
+
+    display:
+        block;
+
+    font-size:
+        11px;
+}
+
+
+.amd-review-user span {
+
+    color:
+        var(--muted);
+
+    font-size:
+        8px;
+}
+
+
+/* =========================================================
+PROCESS
+========================================================= */
+
+.amd-process {
+
+    background:
+        var(--black);
+}
+
+
+.amd-process-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:
+        14px;
+}
+
+
+.amd-process-card {
+
+    min-height:
+        260px;
+
+    padding:
+        24px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    border-radius:
+        16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #14142f,
+            #080817
+        );
+}
+
+
+.amd-process-num {
+
+    margin-bottom:
+        19px;
+
+    color:
+        var(--blue2);
+
+    font-family:
+        "Oswald",
+        sans-serif;
+
+    font-size:
+        37px;
+}
+
+
+.amd-process-card h3 {
+
+    margin-bottom:
+        8px;
+
+    font-family:
+        "Oswald",
+        sans-serif;
+
+    font-size:
+        21px;
+
+    text-transform:
+        uppercase;
+}
+
+
+.amd-process-card p {
+
+    margin:
+        0;
+
+    color:
+        var(--muted);
+
+    font-size:
+        10px;
+}
+
+
+/* =========================================================
+AREA
+========================================================= */
+
+.amd-area {
+
+    background:
+        #0b0a21;
+}
+
+
+.amd-area-card {
+
+    max-width:
+        1080px;
+
+    margin:
+        0 auto;
+
+    padding:
+        58px;
+
+    text-align:
+        center;
+
+    border:
+        1px solid
+        rgba(116,185,255,.23);
+
+    border-radius:
+        25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #171638,
+            #090919
+        );
+}
+
+
+.amd-area-card h2 {
+
+    margin-bottom:
+        16px;
+
+    font-family:
+        "Oswald",
+        sans-serif;
+
+    font-size:
+        clamp(
+            48px,
+            6vw,
+            72px
+        );
+
+    line-height:
+        .94;
+
+    text-transform:
+        uppercase;
+}
+
+
+.amd-area-card > p {
+
+    max-width:
+        680px;
+
+    margin:
+        0 auto 29px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        14px;
+}
+
+
+.amd-area-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:
+        10px;
+
+    margin-bottom:
+        29px;
+}
+
+
+.amd-area-chip {
+
+    padding:
+        18px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    border-radius:
+        12px;
+
+    background:
+        rgba(255,255,255,.02);
+
+    font-family:
+        "Oswald",
+        sans-serif;
+
+    font-size:
+        15px;
+
+    text-transform:
+        uppercase;
+}
+
+
+/* =========================================================
+FAQ
+========================================================= */
+
+.amd-faq {
+
+    background:
+        var(--black);
+}
+
+
+.amd-faq-list {
+
+    max-width:
+        900px;
+
+    margin:
+        0 auto;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        10px;
+}
+
+
+.amd-faq-item {
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        rgba(255,255,255,.09);
+
+    border-radius:
+        14px;
+
+    background:
+        #111128;
+}
+
+
+.amd-faq-question {
+
+    width:
+        100%;
+
+    padding:
+        20px 21px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        20px;
+
+    border:
+        0;
+
+    background:
+        transparent;
+
+    color:
+        white;
+
+    text-align:
+        left;
+
+    font-family:
+        "Oswald",
+        sans-serif;
+
+    font-size:
+        18px;
+
+    text-transform:
+        uppercase;
+}
+
+
+.amd-faq-symbol {
+
+    color:
+        var(--blue2);
+
+    font-size:
+        21px;
+}
+
+
+.amd-faq-answer {
+
+    max-height:
+        0;
+
+    overflow:
+        hidden;
+
+    transition:
+        max-height .3s ease;
+}
+
+
+.amd-faq-answer p {
+
+    margin:
+        0;
+
+    padding:
+        0 21px 21px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        11px;
+}
+
+
+.amd-faq-item.open
+.amd-faq-answer {
+
+    max-height:
+        350px;
+}
+
+
+/* =========================================================
+FINAL CTA
+========================================================= */
+
+.amd-final {
+
+    position:
+        relative;
+
+    min-height:
+        650px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    overflow:
+        hidden;
+
+    text-align:
+        center;
+}
+
+
+.amd-final-bg {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+}
+
+
+.amd-final-bg img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+}
+
+
+.amd-final-bg::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+        rgba(3,3,10,.81);
+}
+
+
+.amd-final-copy {
+
+    position:
+        relative;
+
+    z-index:
+        4;
+
+    max-width:
+        920px;
+
+    margin:
+        0 auto;
+}
+
+
+.amd-final-copy h2 {
+
+    margin-bottom:
+        18px;
+
+    font-family:
+        "Oswald",
+        sans-serif;
+
+    font-size:
+        clamp(
+            59px,
+            8vw,
+            100px
+        );
+
+    line-height:
+        .88;
+
+    text-transform:
+        uppercase;
+}
+
+
+.amd-final-copy p {
+
+    max-width:
+        610px;
+
+    margin:
+        0 auto 27px;
+
+    color:
+        rgba(255,255,255,.74);
+
+    font-size:
+        14px;
+}
+
+
+.amd-final-actions {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        10px;
+}
+
+
+/* =========================================================
+FOOTER
+========================================================= */
+
+.amd-footer {
+
+    padding:
+        60px 0 28px;
+
+    border-top:
+        1px solid
+        rgba(116,185,255,.14);
+
+    background:
+        #020207;
+}
+
+
+.amd-footer-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1.3fr .8fr .9fr 1fr;
+
+    gap:
+        38px;
+}
+
+
+.amd-footer p,
+.amd-footer a,
+.amd-footer span {
+
+    color:
+        var(--muted);
+
+    font-size:
+        10px;
+}
+
+
+.amd-footer h4 {
+
+    margin-bottom:
+        14px;
+
+    font-size:
+        8px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .16em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.amd-footer-links {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        8px;
+}
+
+
+.amd-footer-links a:hover {
+
+    color:
+        var(--blue2);
+}
+
+
+.amd-footer-bottom {
+
+    margin-top:
+        38px;
+
+    padding-top:
+        22px;
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    gap:
+        20px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.07);
+}
+
+
+/* =========================================================
+FLOATING CTA
+========================================================= */
+
+.amd-floating {
+
+    position:
+        fixed;
+
+    z-index:
+        1000;
+
+    right:
+        0;
+
+    top:
+        47%;
+
+    padding:
+        17px 10px;
+
+    border:
+        0;
+
+    border-radius:
+        12px 0 0 12px;
+
+    color:
+        white;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--purple2),
+            var(--blue)
+        );
+
+    writing-mode:
+        vertical-rl;
+
+    font-size:
+        8px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .14em;
+}
+
+
+.amd-mobile-actions {
+
+    display:
+        none;
+}
+
+
+/* =========================================================
+REVEALS
+========================================================= */
+
+.amd-reveal {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(24px);
+
+    transition:
+        opacity .65s ease,
+        transform .65s ease;
+}
+
+
+.amd-reveal.amd-visible {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+TABLET
+========================================================= */
+
+@media(max-width:1150px) {
+
+    .amd-nav {
+
+        display:
+            none;
+    }
+
+
+    .amd-menu-btn {
+
+        display:
+            flex;
+    }
+
+
+    .amd-header
+    .amd-btn {
+
+        display:
+            none;
+    }
+
+
+    .amd-hero-inner {
+
+        grid-template-columns:
+            .9fr 1fr;
+
+        gap:
+            40px;
+    }
+
+
+    .amd-transform-grid,
+    .amd-standard-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .amd-service-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .amd-process-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .amd-footer-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+}
+
+
+/* =========================================================
+MOBILE
+========================================================= */
+
+@media(max-width:800px) {
+
+    .amd-container {
+
+        width:
+            calc(100% - 28px);
+    }
+
+
+    .amd-section {
+
+        padding:
+            74px 0;
+    }
+
+
+    .amd-header {
+
+        height:
+            74px;
+    }
+
+
+    .amd-header-inner {
+
+        width:
+            calc(100% - 22px);
+    }
+
+
+    .amd-logo {
+
+        width:
+            49px;
+
+        height:
+            49px;
+    }
+
+
+    .amd-wordmark strong {
+
+        font-size:
+            17px;
+    }
+
+
+    .amd-wordmark small {
+
+        font-size:
+            5px;
+    }
+
+
+    .amd-phone {
+
+        display:
+            none;
+    }
+
+
+    /* HERO */
+
+    .amd-hero {
+
+        min-height:
+            auto;
+
+        padding:
+            103px 0 55px;
+
+        align-items:
+            flex-start;
+    }
+
+
+    .amd-hero-inner {
+
+        width:
+            calc(100% - 28px);
+
+        display:
+            block;
+    }
+
+
+    .amd-hero-overlay {
+
+        background:
+            linear-gradient(
+                180deg,
+
+                rgba(3,3,10,.54),
+
+                rgba(3,3,10,.75)
+                30%,
+
+                rgba(3,3,10,.95)
+                60%,
+
+                rgba(3,3,10,.99)
+            );
+    }
+
+
+    #amdHeroVideo {
+
+        object-position:
+            center;
+    }
+
+
+    .amd-location {
+
+        font-size:
+            6px;
+    }
+
+
+    .amd-hero h1 {
+
+        font-size:
+            51px;
+    }
+
+
+    .amd-hero-copy > p {
+
+        font-size:
+            12px;
+    }
+
+
+    .amd-hero-actions {
+
+        display:
+            grid;
+    }
+
+
+    .amd-hero-actions
+    .amd-btn {
+
+        width:
+            100%;
+    }
+
+
+    .amd-hero-proof {
+
+        gap:
+            10px 14px;
+
+        font-size:
+            7px;
+    }
+
+
+    /* QUIZ */
+
+    .amd-quiz {
+
+        margin-top:
+            30px;
+
+        padding:
+            20px 16px;
+
+        min-height:
+            0 !important;
+
+        height:
+            auto !important;
+    }
+
+
+    .amd-quiz-step h2 {
+
+        font-size:
+            28px;
+    }
+
+
+    .amd-options {
+
+        gap:
+            8px;
+    }
+
+
+    .amd-option {
+
+        min-height:
+            96px;
+
+        padding:
+            10px;
+    }
+
+
+    .amd-option strong {
+
+        font-size:
+            9px;
+    }
+
+
+    .amd-option small {
+
+        font-size:
+            6.5px;
+    }
+
+
+    .amd-form-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .amd-field.full,
+    .amd-consent {
+
+        grid-column:
+            auto;
+    }
+
+
+    /* STATS */
+
+    .amd-stats-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .amd-stat {
+
+        min-height:
+            115px;
+
+        border-right:
+            0;
+
+        border-bottom:
+            1px solid
+            rgba(255,255,255,.07);
+    }
+
+
+    .amd-stat:last-child {
+
+        border-bottom:
+            0;
+    }
+
+
+    /* BA */
+
+    .amd-transform-grid {
+
+        gap:
+            36px;
+    }
+
+
+    .amd-ba-shell {
+
+        aspect-ratio:
+            4 / 5;
+    }
+
+
+    .amd-transform-copy h2 {
+
+        font-size:
+            46px;
+    }
+
+
+    /* SERVICE */
+
+    .amd-service-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .amd-service {
+
+        min-height:
+            440px;
+    }
+
+
+    /* STANDARD */
+
+    .amd-benefits {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .amd-standard-photo {
+
+        min-height:
+            470px;
+    }
+
+
+    /* GALLERY */
+
+    .amd-gallery-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+
+        grid-template-rows:
+            310px 220px 220px;
+    }
+
+
+    .amd-gallery-card:first-child {
+
+        grid-column:
+            1 / -1;
+
+        grid-row:
+            auto;
+    }
+
+
+    .amd-instagram {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+    }
+
+
+    .amd-instagram
+    .amd-btn {
+
+        width:
+            100%;
+    }
+
+
+    /* REVIEWS */
+
+    .amd-review {
+
+        width:
+            300px;
+    }
+
+
+    /* PROCESS */
+
+    .amd-process-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    /* AREA */
+
+    .amd-area-card {
+
+        padding:
+            42px 20px;
+    }
+
+
+    .amd-area-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    /* FINAL */
+
+    .amd-final-copy h2 {
+
+        font-size:
+            54px;
+    }
+
+
+    .amd-final-actions {
+
+        display:
+            grid;
+    }
+
+
+    /* FOOTER */
+
+    .amd-footer-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .amd-footer-bottom {
+
+        flex-direction:
+            column;
+    }
+
+
+    .amd-floating {
+
+        display:
+            none;
+    }
+
+
+    .amd-mobile-actions {
+
+        position:
+            fixed;
+
+        z-index:
+            2500;
+
+        left:
+            0;
+
+        right:
+            0;
+
+        bottom:
+            0;
+
+        display:
+            grid;
+
+        grid-template-columns:
+            .85fr 1.15fr;
+
+        gap:
+            7px;
+
+        padding:
+            8px;
+
+        border-top:
+            1px solid
+            rgba(255,255,255,.10);
+
+        background:
+            rgba(3,3,10,.98);
+    }
+
+
+    .amd-mobile-actions a,
+    .amd-mobile-actions button {
+
+        height:
+            48px;
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
+
+        border-radius:
+            8px;
+
+        font-size:
+            9px;
+
+        font-weight:
+            900;
+    }
+
+
+    .amd-mobile-actions a {
+
+        border:
+            1px solid
+            rgba(255,255,255,.14);
+    }
+
+
+    .amd-mobile-actions button {
+
+        border:
+            0;
+
+        color:
+            white;
+
+        background:
+            linear-gradient(
+                135deg,
+                var(--purple2),
+                var(--blue)
+            );
+    }
+
+
+    .amd-footer {
+
+        padding-bottom:
+            90px;
+    }
+
+}
+
+
+@media(max-width:430px) {
+
+    .amd-area-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+
+/* =========================================================
+RESPONSIVE REBUILD V2
+CLEAN MOBILE FIRST-LOAD + TABLET SAFETY
+========================================================= */
+
+/* Better scaling across large desktop and laptop widths */
+@media (min-width: 1500px) {
+    .amd-header-inner,
+    .amd-hero-inner {
+        width: min(1440px, calc(100% - 80px));
+    }
+
+    .amd-container {
+        width: min(1320px, calc(100% - 80px));
+    }
+}
+
+/* Fix the awkward 801px-1150px zone before it ever reaches phone CSS */
+@media (max-width: 980px) {
+    .amd-header {
+        height: 82px;
+    }
+
+    .amd-header-inner {
+        width: calc(100% - 32px);
+    }
+
+    .amd-wordmark strong {
+        font-size: 20px;
+    }
+
+    .amd-hero {
+        min-height: auto;
+        padding: 112px 0 48px;
+        align-items: flex-start;
+    }
+
+    .amd-hero-inner {
+        width: min(760px, calc(100% - 36px));
+        grid-template-columns: 1fr !important;
+        gap: 38px !important;
+    }
+
+    .amd-hero-copy {
+        max-width: 680px;
+    }
+
+    .amd-hero h1 {
+        font-size: clamp(58px, 9.5vw, 82px);
+    }
+
+    .amd-quiz {
+        width: 100%;
+        max-width: 680px;
+        margin: 0 auto;
+    }
+
+    .amd-service-grid,
+    .amd-process-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .amd-transform-grid,
+    .amd-standard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Premium mobile first-load */
+@media (max-width: 640px) {
+
+    html,
+    body,
+    #amd-site {
+        width: 100% !important;
+        min-width: 0 !important;
+        overflow-x: clip !important;
+    }
+
+    #amd-site {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .amd-container {
+        width: calc(100% - 28px) !important;
+    }
+
+    .amd-section {
+        padding: 72px 0 !important;
+    }
+
+    /* HEADER: float over the hero instead of looking like a separate black box */
+    .amd-header {
+        height: 86px !important;
+        border-bottom: 0 !important;
+        background:
+            linear-gradient(
+                180deg,
+                rgba(3,3,10,.88) 0%,
+                rgba(3,3,10,.52) 56%,
+                rgba(3,3,10,0) 100%
+            ) !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+
+    .amd-header-inner {
+        width: calc(100% - 30px) !important;
+        height: 86px !important;
+    }
+
+    .amd-brand {
+        gap: 0 !important;
+    }
+
+    .amd-logo {
+        width: 62px !important;
+        height: 62px !important;
+        box-shadow:
+            0 0 0 1px rgba(117,151,255,.30),
+            0 10px 30px rgba(0,0,0,.30) !important;
+    }
+
+    .amd-wordmark {
+        display: none !important;
+    }
+
+    .amd-menu-btn {
+        width: 50px !important;
+        height: 50px !important;
+        border-radius: 12px !important;
+        border-color: rgba(255,255,255,.22) !important;
+        background: rgba(4,4,11,.35) !important;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    .amd-menu-btn span {
+        width: 24px !important;
+        height: 2px !important;
+    }
+
+    /* HERO: make the first phone viewport feel like a real premium landing page */
+    .amd-hero {
+        min-height: auto !important;
+        padding: 0 0 34px !important;
+        align-items: flex-start !important;
+        background: #03030a !important;
+    }
+
+    .amd-hero-media {
+        height: max(760px, 100svh) !important;
+        min-height: 760px !important;
+    }
+
+    #amdHeroVideo,
+    .amd-hero-poster {
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: 52% center !important;
+        filter:
+            brightness(.62)
+            saturate(.88)
+            contrast(1.08) !important;
+        transform: scale(1.025);
+    }
+
+    .amd-hero-overlay {
+        height: max(760px, 100svh) !important;
+        min-height: 760px !important;
+        background:
+            linear-gradient(
+                180deg,
+                rgba(3,3,10,.34) 0%,
+                rgba(3,3,10,.38) 22%,
+                rgba(3,3,10,.58) 50%,
+                rgba(3,3,10,.89) 78%,
+                #03030a 100%
+            ),
+            linear-gradient(
+                90deg,
+                rgba(3,3,10,.28),
+                rgba(3,3,10,.08) 50%,
+                rgba(3,3,10,.28)
+            ) !important;
+    }
+
+    .amd-hero-grid {
+        height: max(760px, 100svh) !important;
+        min-height: 760px !important;
+        opacity: .035 !important;
+        background-size: 54px 54px !important;
+    }
+
+    .amd-hero-glow {
+        width: 420px !important;
+        height: 420px !important;
+        right: -220px !important;
+        top: 180px !important;
+        opacity: .55;
+    }
+
+    .amd-hero-inner {
+        width: calc(100% - 34px) !important;
+        margin: 0 auto !important;
+        display: block !important;
+        padding-top: 86px !important;
+    }
+
+    .amd-hero-copy {
+        min-height: calc(100svh - 86px) !important;
+        min-height: calc(100dvh - 86px) !important;
+        padding: 54px 0 38px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .amd-location {
+        max-width: 100% !important;
+        margin: 0 auto 22px !important;
+        padding: 9px 13px !important;
+        gap: 8px !important;
+        font-size: 8px !important;
+        line-height: 1.25 !important;
+        letter-spacing: .12em !important;
+        white-space: nowrap;
+        background: rgba(25,30,80,.32) !important;
+        border-color: rgba(116,185,255,.50) !important;
+        box-shadow: 0 8px 30px rgba(0,0,0,.14);
+    }
+
+    .amd-location i {
+        width: 7px !important;
+        height: 7px !important;
+        flex: 0 0 7px;
+    }
+
+    .amd-hero h1 {
+        width: 100% !important;
+        max-width: 410px !important;
+        margin: 0 auto 20px !important;
+        font-size: clamp(48px, 13.2vw, 61px) !important;
+        line-height: .91 !important;
+        letter-spacing: -.045em !important;
+        text-align: center !important;
+        text-wrap: balance;
+    }
+
+    .amd-hero h1 span {
+        margin-top: 3px;
+    }
+
+    .amd-hero-copy > p {
+        max-width: 370px !important;
+        margin: 0 auto 26px !important;
+        color: rgba(255,255,255,.74) !important;
+        font-size: 14px !important;
+        line-height: 1.58 !important;
+        text-align: center !important;
+        text-wrap: pretty;
+    }
+
+    .amd-hero-actions {
+        width: 100% !important;
+        max-width: 370px !important;
+        margin: 0 auto !important;
+        display: block !important;
+    }
+
+    .amd-hero-actions .amd-btn {
+        width: 100% !important;
+        min-height: 60px !important;
+        padding: 0 20px !important;
+        border-radius: 10px !important;
+        font-size: 13px !important;
+        letter-spacing: .01em;
+    }
+
+    .amd-hero-actions .amd-btn-outline {
+        display: none !important;
+    }
+
+    .amd-hero-actions .amd-btn-primary {
+        box-shadow:
+            0 18px 50px rgba(66,85,224,.32),
+            inset 0 1px 0 rgba(255,255,255,.18) !important;
+    }
+
+    .amd-hero-proof {
+        width: 100% !important;
+        max-width: 385px !important;
+        margin: 20px auto 0 !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0,1fr)) !important;
+        gap: 0 !important;
+        color: rgba(255,255,255,.66) !important;
+        font-size: 8px !important;
+        line-height: 1.3 !important;
+        text-align: center !important;
+    }
+
+    .amd-proof {
+        min-width: 0;
+        padding: 0 7px;
+    }
+
+    .amd-proof + .amd-proof {
+        border-left: 1px solid rgba(255,255,255,.12);
+    }
+
+    .amd-proof span {
+        display: block !important;
+        min-height: 14px;
+        margin: 0 0 4px !important;
+        color: var(--blue2) !important;
+        font-size: 9px !important;
+    }
+
+    /* QUIZ: push below the hero's opening viewport and make it feel intentional */
+    .amd-quiz {
+        width: 100% !important;
+        margin: 18px auto 0 !important;
+        padding: 24px 18px !important;
+        border-radius: 20px !important;
+        border-color: rgba(116,185,255,.34) !important;
+        background:
+            radial-gradient(circle at 100% 0%, rgba(78,99,225,.18), transparent 34%),
+            linear-gradient(145deg, rgba(27,22,72,.98), rgba(7,7,23,.99)) !important;
+        box-shadow:
+            0 28px 70px rgba(0,0,0,.46),
+            inset 0 1px 0 rgba(255,255,255,.04) !important;
+    }
+
+    .amd-quiz-top {
+        align-items: center !important;
+        gap: 14px !important;
+        margin-bottom: 22px !important;
+    }
+
+    .amd-step-label {
+        font-size: 9px !important;
+        letter-spacing: .12em !important;
+        white-space: nowrap;
+    }
+
+    .amd-progress {
+        width: 47% !important;
+        height: 5px !important;
+    }
+
+    .amd-quiz-step h2 {
+        margin-bottom: 6px !important;
+        font-size: clamp(30px, 8.8vw, 38px) !important;
+        line-height: .98 !important;
+        letter-spacing: -.025em !important;
+    }
+
+    .amd-quiz-step > p {
+        margin-bottom: 17px !important;
+        font-size: 11px !important;
+        line-height: 1.5 !important;
+    }
+
+    .amd-options {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 9px !important;
+    }
+
+    .amd-option {
+        min-height: 110px !important;
+        padding: 13px 11px !important;
+        border-radius: 12px !important;
+    }
+
+    .amd-option-icon {
+        width: 32px !important;
+        height: 32px !important;
+        margin-bottom: 8px !important;
+    }
+
+    .amd-option strong {
+        font-size: 10px !important;
+        line-height: 1.25 !important;
+    }
+
+    .amd-option small {
+        margin-top: 3px;
+        font-size: 7.5px !important;
+        line-height: 1.35 !important;
+    }
+
+    .amd-field input {
+        height: 50px !important;
+        font-size: 16px !important; /* prevents iOS input zoom */
+    }
+
+    /* STAT STRIP: 3 clean columns, not 3 giant stacked blocks */
+    .amd-stats-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    .amd-stat {
+        min-height: 105px !important;
+        padding: 18px 7px !important;
+        border-right: 1px solid rgba(255,255,255,.08) !important;
+        border-bottom: 0 !important;
+    }
+
+    .amd-stat:last-child {
+        border-right: 0 !important;
+    }
+
+    .amd-stat strong {
+        margin-bottom: 5px !important;
+        font-size: clamp(33px, 9vw, 42px) !important;
+    }
+
+    .amd-stat span {
+        font-size: 6.5px !important;
+        line-height: 1.35 !important;
+        letter-spacing: .08em !important;
+    }
+
+    /* GLOBAL SECTION TYPOGRAPHY */
+    .amd-section-head {
+        margin-bottom: 34px !important;
+    }
+
+    .amd-section-head h2 {
+        margin-bottom: 14px !important;
+        font-size: clamp(40px, 11vw, 54px) !important;
+        line-height: .95 !important;
+        text-wrap: balance;
+    }
+
+    .amd-section-head p {
+        max-width: 370px !important;
+        font-size: 13px !important;
+        line-height: 1.62 !important;
+    }
+
+    .amd-eyebrow {
+        margin-bottom: 13px !important;
+        font-size: 8px !important;
+    }
+
+    /* BEFORE / AFTER */
+    .amd-transform-grid {
+        gap: 30px !important;
+    }
+
+    .amd-ba-shell {
+        aspect-ratio: 4 / 4.7 !important;
+        border-radius: 18px !important;
+    }
+
+    .amd-transform-copy h2 {
+        font-size: clamp(42px, 11vw, 52px) !important;
+        line-height: .96 !important;
+    }
+
+    /* SERVICES */
+    .amd-service-grid {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+    }
+
+    .amd-service {
+        min-height: 345px !important;
+        border-radius: 18px !important;
+    }
+
+    /* STANDARD / WHY AMD */
+    .amd-standard-photo {
+        min-height: 390px !important;
+        border-radius: 18px !important;
+    }
+
+    .amd-benefits {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* GALLERY */
+    .amd-gallery-grid {
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: 260px 190px 190px !important;
+        gap: 9px !important;
+    }
+
+    .amd-gallery-card {
+        border-radius: 14px !important;
+    }
+
+    .amd-instagram {
+        gap: 18px !important;
+    }
+
+    /* REVIEWS */
+    .amd-review {
+        width: min(82vw, 315px) !important;
+    }
+
+    /* PROCESS */
+    .amd-process-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+
+    .amd-process-card {
+        border-radius: 16px !important;
+    }
+
+    /* SERVICE AREA */
+    .amd-area-card {
+        padding: 38px 18px !important;
+        border-radius: 20px !important;
+    }
+
+    .amd-area-card h2 {
+        font-size: clamp(40px, 11vw, 52px) !important;
+        line-height: .95 !important;
+    }
+
+    .amd-area-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 8px !important;
+    }
+
+    /* FINAL CTA */
+    .amd-final {
+        min-height: 620px !important;
+    }
+
+    .amd-final-copy {
+        width: calc(100% - 34px) !important;
+    }
+
+    .amd-final-copy h2 {
+        font-size: clamp(48px, 13vw, 62px) !important;
+        line-height: .91 !important;
+        text-wrap: balance;
+    }
+
+    .amd-final-copy p {
+        font-size: 13px !important;
+        line-height: 1.6 !important;
+    }
+
+    .amd-final-actions {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 9px !important;
+    }
+
+    .amd-final-actions .amd-btn {
+        width: 100% !important;
+    }
+
+    /* FOOTER */
+    .amd-footer {
+        padding-bottom: calc(92px + env(safe-area-inset-bottom)) !important;
+    }
+
+    .amd-footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+
+    .amd-footer-bottom {
+        gap: 8px !important;
+        align-items: flex-start !important;
+    }
+
+    /* STICKY MOBILE CTA: smaller, safer and less intrusive */
+    .amd-mobile-actions {
+        left: 10px !important;
+        right: 10px !important;
+        bottom: calc(9px + env(safe-area-inset-bottom)) !important;
+        grid-template-columns: .84fr 1.16fr !important;
+        gap: 8px !important;
+        padding: 7px !important;
+        border: 1px solid rgba(255,255,255,.12) !important;
+        border-radius: 16px !important;
+        background: rgba(3,3,10,.90) !important;
+        box-shadow: 0 16px 50px rgba(0,0,0,.38) !important;
+        backdrop-filter: blur(18px) !important;
+        -webkit-backdrop-filter: blur(18px) !important;
+    }
+
+    .amd-mobile-actions a,
+    .amd-mobile-actions button {
+        height: 50px !important;
+        border-radius: 11px !important;
+        font-size: 10px !important;
+        letter-spacing: .01em;
+    }
+
+    /* MOBILE MENU */
+    .amd-mobile-menu {
+        padding: 104px 24px 34px !important;
+    }
+
+    .amd-mobile-menu nav a {
+        padding: 14px 0 !important;
+        font-size: 27px !important;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+    .amd-header-inner {
+        width: calc(100% - 24px) !important;
+    }
+
+    .amd-logo {
+        width: 56px !important;
+        height: 56px !important;
+    }
+
+    .amd-menu-btn {
+        width: 46px !important;
+        height: 46px !important;
+    }
+
+    .amd-hero-inner {
+        width: calc(100% - 28px) !important;
+    }
+
+    .amd-hero-copy {
+        padding-top: 44px !important;
+    }
+
+    .amd-location {
+        font-size: 7px !important;
+        letter-spacing: .09em !important;
+    }
+
+    .amd-hero h1 {
+        font-size: clamp(44px, 13.3vw, 51px) !important;
+    }
+
+    .amd-hero-copy > p {
+        font-size: 13px !important;
+    }
+
+    .amd-hero-proof {
+        font-size: 7px !important;
+    }
+
+    .amd-options {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 7px !important;
+    }
+
+    .amd-option {
+        min-height: 104px !important;
+        padding: 11px 9px !important;
+    }
+
+    .amd-area-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Landscape phones: avoid forcing a portrait-sized hero */
+@media (max-height: 560px) and (orientation: landscape) {
+    .amd-hero-media,
+    .amd-hero-overlay,
+    .amd-hero-grid {
+        height: 690px !important;
+        min-height: 690px !important;
+    }
+
+    .amd-hero-copy {
+        min-height: 560px !important;
+        padding-top: 34px !important;
+    }
+}
+
+
+
+/* =========================================================
+RESPONSIVE POLISH V3
+TIGHTER HERO RHYTHM + TRUE VIEWPORT MOBILE DOCK
+========================================================= */
+
+/* Desktop spacing polish */
+@media (min-width: 1160px) {
+    .amd-hero {
+        min-height: 900px !important;
+        padding: 128px 0 68px !important;
+    }
+
+    .amd-hero-inner {
+        gap: clamp(46px, 4.5vw, 68px) !important;
+    }
+
+    .amd-hero h1 {
+        margin-bottom: 20px !important;
+    }
+
+    .amd-hero-copy > p {
+        margin-bottom: 24px !important;
+    }
+
+    .amd-hero-proof {
+        margin-top: 23px !important;
+    }
+
+    .amd-section {
+        padding: 96px 0 !important;
+    }
+
+    .amd-section-head {
+        margin-bottom: 42px !important;
+    }
+}
+
+/* Tablet and small laptop spacing */
+@media (min-width: 641px) and (max-width: 1159px) {
+    .amd-section {
+        padding: 82px 0 !important;
+    }
+
+    .amd-header {
+        height: 78px !important;
+    }
+
+    .amd-header-inner {
+        height: 78px !important;
+        width: calc(100% - 32px) !important;
+    }
+
+    .amd-logo {
+        width: 54px !important;
+        height: 54px !important;
+    }
+
+    .amd-hero {
+        min-height: auto !important;
+        padding: 104px 0 60px !important;
+    }
+
+    .amd-hero-inner {
+        width: min(760px, calc(100% - 36px)) !important;
+        gap: 28px !important;
+    }
+
+    .amd-hero-copy {
+        max-width: 650px !important;
+        margin: 0 auto !important;
+    }
+
+    .amd-hero h1 {
+        margin-bottom: 18px !important;
+        font-size: clamp(56px, 8.5vw, 78px) !important;
+    }
+
+    .amd-hero-copy > p {
+        margin-bottom: 23px !important;
+        line-height: 1.62 !important;
+    }
+
+    .amd-hero-proof {
+        margin-top: 22px !important;
+    }
+
+    .amd-quiz {
+        margin-top: 4px !important;
+    }
+
+    .amd-section-head {
+        margin-bottom: 36px !important;
+    }
+
+    .amd-service-grid,
+    .amd-process-grid {
+        gap: 14px !important;
+    }
+}
+
+/* Mobile layout rebuilt around natural content height */
+@media (max-width: 640px) {
+    :root {
+        --amd-mobile-gutter: 16px;
+        --amd-mobile-section: 62px;
+    }
+
+    html,
+    body {
+        overscroll-behavior-x: none;
+    }
+
+    #amd-site {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .amd-container {
+        width: calc(100% - 32px) !important;
+    }
+
+    .amd-section {
+        padding: var(--amd-mobile-section) 0 !important;
+    }
+
+    /* Header remains clean and compact over the video */
+    .amd-header {
+        height: 78px !important;
+    }
+
+    .amd-header-inner {
+        width: calc(100% - 28px) !important;
+        height: 78px !important;
+    }
+
+    .amd-logo {
+        width: 56px !important;
+        height: 56px !important;
+    }
+
+    .amd-menu-btn {
+        width: 47px !important;
+        height: 47px !important;
+        border-radius: 11px !important;
+    }
+
+    .amd-menu-btn span {
+        width: 22px !important;
+    }
+
+    /* Keep the cinematic media only behind the actual hero, not the quiz */
+    .amd-hero {
+        min-height: 0 !important;
+        padding: 0 0 30px !important;
+        overflow: hidden !important;
+    }
+
+    .amd-hero-media,
+    .amd-hero-overlay,
+    .amd-hero-grid {
+        height: clamp(650px, 88svh, 760px) !important;
+        min-height: 650px !important;
+    }
+
+    #amdHeroVideo,
+    .amd-hero-poster {
+        object-position: 52% center !important;
+        transform: scale(1.015) !important;
+    }
+
+    .amd-hero-overlay {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(3,3,10,.27) 0%,
+                rgba(3,3,10,.35) 22%,
+                rgba(3,3,10,.55) 52%,
+                rgba(3,3,10,.88) 80%,
+                #03030a 100%
+            ),
+            linear-gradient(
+                90deg,
+                rgba(3,3,10,.25),
+                rgba(3,3,10,.06) 50%,
+                rgba(3,3,10,.25)
+            ) !important;
+    }
+
+    .amd-hero-inner {
+        width: calc(100% - 32px) !important;
+        margin: 0 auto !important;
+        padding-top: 78px !important;
+        display: block !important;
+    }
+
+    /* This removes the large dead zone below the logo */
+    .amd-hero-copy {
+        min-height: 0 !important;
+        max-width: 430px !important;
+        margin: 0 auto !important;
+        padding: 28px 0 26px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .amd-location {
+        margin: 0 auto 17px !important;
+        padding: 8px 11px !important;
+        font-size: 7.5px !important;
+        letter-spacing: .105em !important;
+    }
+
+    .amd-hero h1 {
+        max-width: 400px !important;
+        margin: 0 auto 16px !important;
+        font-size: clamp(46px, 12.9vw, 59px) !important;
+        line-height: .91 !important;
+    }
+
+    .amd-hero-copy > p {
+        max-width: 350px !important;
+        margin: 0 auto 21px !important;
+        font-size: 13px !important;
+        line-height: 1.52 !important;
+    }
+
+    .amd-hero-actions {
+        max-width: 350px !important;
+    }
+
+    .amd-hero-actions .amd-btn {
+        min-height: 56px !important;
+        border-radius: 10px !important;
+        font-size: 12px !important;
+    }
+
+    .amd-hero-proof {
+        max-width: 360px !important;
+        margin: 17px auto 0 !important;
+        font-size: 7.5px !important;
+    }
+
+    .amd-proof {
+        padding: 0 6px !important;
+    }
+
+    .amd-proof span {
+        margin-bottom: 3px !important;
+        font-size: 8.5px !important;
+    }
+
+    /* Quiz now follows the hero naturally with no artificial black gap */
+    .amd-quiz {
+        margin: 10px auto 0 !important;
+        padding: 22px 16px !important;
+        border-radius: 19px !important;
+    }
+
+    .amd-quiz-top {
+        margin-bottom: 18px !important;
+    }
+
+    .amd-quiz-step h2 {
+        margin-bottom: 5px !important;
+        font-size: clamp(29px, 8.4vw, 36px) !important;
+    }
+
+    .amd-quiz-step > p {
+        margin-bottom: 15px !important;
+    }
+
+    .amd-options {
+        gap: 8px !important;
+    }
+
+    .amd-option {
+        min-height: 102px !important;
+        padding: 12px 10px !important;
+    }
+
+    .amd-option-icon {
+        margin-bottom: 7px !important;
+    }
+
+    /* Consistent rhythm through the rest of the site */
+    .amd-section-head {
+        margin-bottom: 29px !important;
+    }
+
+    .amd-section-head h2 {
+        margin-bottom: 11px !important;
+    }
+
+    .amd-transform-grid,
+    .amd-standard-grid {
+        gap: 24px !important;
+    }
+
+    .amd-service-grid,
+    .amd-process-grid,
+    .amd-benefits {
+        gap: 11px !important;
+    }
+
+    .amd-service {
+        min-height: 320px !important;
+    }
+
+    .amd-standard-photo {
+        min-height: 350px !important;
+    }
+
+    .amd-gallery-grid {
+        grid-template-rows: 235px 175px 175px !important;
+        gap: 8px !important;
+    }
+
+    .amd-instagram {
+        margin-top: 24px !important;
+    }
+
+    .amd-area-card {
+        padding: 34px 17px !important;
+    }
+
+    .amd-final {
+        min-height: 560px !important;
+    }
+
+    .amd-footer {
+        padding-bottom: 40px !important;
+    }
+
+    /* Mobile dock is portaled to body by JS so GHL wrappers cannot trap it */
+    .amd-mobile-actions {
+        position: fixed !important;
+        z-index: 2147483000 !important;
+        left: 10px !important;
+        right: 10px !important;
+        bottom: max(10px, env(safe-area-inset-bottom)) !important;
+        width: auto !important;
+        max-width: none !important;
+        margin: 0 !important;
+        display: grid !important;
+        grid-template-columns: .88fr 1.12fr !important;
+        gap: 7px !important;
+        padding: 7px !important;
+        border: 1px solid rgba(255,255,255,.12) !important;
+        border-radius: 15px !important;
+        background: rgba(3,3,10,.92) !important;
+        box-shadow: 0 14px 42px rgba(0,0,0,.42) !important;
+        -webkit-backdrop-filter: blur(16px) !important;
+        backdrop-filter: blur(16px) !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        transform: translate3d(0, calc(100% + 24px), 0) !important;
+        transition: opacity .22s ease, transform .22s ease !important;
+        contain: layout paint style;
+    }
+
+    .amd-mobile-actions.amd-dock-visible {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        transform: translate3d(0, 0, 0) !important;
+    }
+
+    .amd-mobile-actions a,
+    .amd-mobile-actions button {
+        height: 48px !important;
+        min-height: 48px !important;
+        margin: 0 !important;
+        border-radius: 10px !important;
+        font-size: 9.5px !important;
+    }
+}
+
+/* Narrow phones */
+@media (max-width: 390px) {
+    .amd-header-inner,
+    .amd-hero-inner {
+        width: calc(100% - 24px) !important;
+    }
+
+    .amd-logo {
+        width: 53px !important;
+        height: 53px !important;
+    }
+
+    .amd-hero-copy {
+        padding-top: 24px !important;
+    }
+
+    .amd-location {
+        font-size: 7px !important;
+        margin-bottom: 15px !important;
+    }
+
+    .amd-hero h1 {
+        font-size: clamp(43px, 12.8vw, 50px) !important;
+        margin-bottom: 14px !important;
+    }
+
+    .amd-hero-copy > p {
+        font-size: 12.5px !important;
+        margin-bottom: 19px !important;
+    }
+
+    .amd-hero-proof {
+        margin-top: 15px !important;
+        font-size: 7px !important;
+    }
+
+    .amd-quiz {
+        padding: 20px 14px !important;
+    }
+
+    .amd-option {
+        min-height: 98px !important;
+    }
+
+    .amd-section {
+        padding: 56px 0 !important;
+    }
+}
+
+/* Short mobile screens */
+@media (max-width: 640px) and (max-height: 720px) {
+    .amd-hero-media,
+    .amd-hero-overlay,
+    .amd-hero-grid {
+        height: 650px !important;
+        min-height: 650px !important;
+    }
+
+    .amd-hero-copy {
+        padding-top: 20px !important;
+    }
+
+    .amd-location {
+        margin-bottom: 13px !important;
+    }
+
+    .amd-hero h1 {
+        margin-bottom: 12px !important;
+        font-size: clamp(42px, 12vw, 52px) !important;
+    }
+
+    .amd-hero-copy > p {
+        margin-bottom: 16px !important;
+        font-size: 12px !important;
+    }
+
+    .amd-hero-actions .amd-btn {
+        min-height: 52px !important;
+    }
+
+    .amd-hero-proof {
+        margin-top: 13px !important;
+    }
+}
+
+/* Landscape phones */
+@media (max-height: 560px) and (orientation: landscape) {
+    .amd-hero-media,
+    .amd-hero-overlay,
+    .amd-hero-grid {
+        height: 610px !important;
+        min-height: 610px !important;
+    }
+
+    .amd-hero-inner {
+        padding-top: 70px !important;
+    }
+
+    .amd-hero-copy {
+        min-height: 0 !important;
+        padding: 20px 0 24px !important;
+    }
+}
+
+</style>
+
+
+
+</head>
+<body>
+<div id="amd-site">
+
+
+<!-- =========================================================
+HEADER
+========================================================= -->
+
+<header class="amd-header">
+
+<div class="amd-header-inner">
+
+
+<a
+href="#home"
+class="amd-brand"
+>
+
+<div
+class="amd-logo"
+aria-label="Any Means Detailing logo"
+></div>
+
+
+<div class="amd-wordmark">
+
+<strong>
+ANY MEANS <span>DETAILING</span>
+</strong>
+
+<small>
+Paterson • New Jersey
+</small>
+
+</div>
+
+</a>
+
+
+
+<nav class="amd-nav">
+
+<a href="#results">
+Results
+</a>
+
+<a href="#services">
+Services
+</a>
+
+<a href="#standard">
+Why AMD
+</a>
+
+<a href="#work">
+Gallery
+</a>
+
+<a href="#reviews">
+Reviews
+</a>
+
+<a href="#process">
+Process
+</a>
+
+<a href="#faq">
+FAQ
+</a>
+
+</nav>
+
+
+
+<div class="amd-header-actions">
+
+
+<a
+href="tel:+18626218676"
+class="amd-phone"
+>
+
+<span>☎</span>
+
+862-621-8676
+
+</a>
+
+
+<button
+type="button"
+class="amd-btn amd-btn-primary"
+onclick="amdScrollQuote()"
+>
+Book Detail
+</button>
+
+
+<button
+type="button"
+class="amd-menu-btn"
+onclick="amdOpenMenu()"
+>
+
+<span></span>
+<span></span>
+<span></span>
+
+</button>
+
+
+</div>
+
+
+</div>
+
+</header>
+
+
+
+<!-- =========================================================
+MOBILE MENU
+========================================================= -->
+
+<div
+class="amd-mobile-menu"
+id="amdMobileMenu"
+>
+
+
+<button
+type="button"
+class="amd-mobile-close"
+onclick="amdCloseMenu()"
+>
+×
+</button>
+
+
+<nav>
+
+<a
+href="#results"
+onclick="amdCloseMenu()"
+>
+Before / After
+</a>
+
+<a
+href="#services"
+onclick="amdCloseMenu()"
+>
+Pick A Service
+</a>
+
+<a
+href="#standard"
+onclick="amdCloseMenu()"
+>
+Why AMD
+</a>
+
+<a
+href="#work"
+onclick="amdCloseMenu()"
+>
+Gallery
+</a>
+
+<a
+href="#reviews"
+onclick="amdCloseMenu()"
+>
+Reviews
+</a>
+
+<a
+href="#process"
+onclick="amdCloseMenu()"
+>
+Process
+</a>
+
+<a
+href="#faq"
+onclick="amdCloseMenu()"
+>
+FAQ
+</a>
+
+</nav>
+
+
+<button
+type="button"
+class="amd-btn amd-btn-primary"
+onclick="amdScrollQuote()"
+>
+Build My Detail
+</button>
+
+
+</div>
+
+
+
+<!-- =========================================================
+HERO WITH USER-PROVIDED VIDEO
+========================================================= -->
+
+<section
+class="amd-hero"
+id="home"
+>
+
+
+<div class="amd-hero-media">
+
+
+<img
+class="amd-hero-poster"
+src="https://images.pexels.com/photos/6873174/pexels-photo-6873174.jpeg?auto=compress&cs=tinysrgb&w=1800"
+alt="Luxury vehicle professional detailing"
+>
+
+
+<video
+id="amdHeroVideo"
+src="https://assets.cdn.filesafe.space/bF1dT8IAVuvat84LkAVe/media/6a9583a09ced56098ace4c9b.mov"
+autoplay
+muted
+loop
+playsinline
+webkit-playsinline
+preload="auto"
+poster="https://images.pexels.com/photos/6873174/pexels-photo-6873174.jpeg?auto=compress&cs=tinysrgb&w=1800"
+></video>
+
+
+</div>
+
+
+<div class="amd-hero-overlay"></div>
+
+<div class="amd-hero-grid"></div>
+
+<div class="amd-hero-glow"></div>
+
+
+
+<div class="amd-hero-inner">
+
+
+<!-- HERO COPY -->
+
+<div class="amd-hero-copy">
+
+
+<div class="amd-location">
+
+<i></i>
+
+Paterson • New Jersey • Professional Detailing
+
+</div>
+
+
+
+<h1>
+
+Dirty Is Temporary.
+
+<span>
+The Finish Isn't.
+</span>
+
+</h1>
+
+
+
+<p>
+Premium detailing for North Jersey drivers who care about the finish.
+Deep interior resets, precise exterior care and complete vehicle detailing,
+done with the attention your car deserves.
+</p>
+
+
+
+<div class="amd-hero-actions">
+
+
+<button
+type="button"
+class="amd-btn amd-btn-primary"
+onclick="amdScrollQuote()"
+>
+Build My Detail →
+</button>
+
+
+<a
+href="tel:+18626218676"
+class="amd-btn amd-btn-outline"
+>
+Call 862-621-8676
+</a>
+
+
+</div>
+
+
+
+<div class="amd-hero-proof">
+
+
+<div class="amd-proof">
+
+<span>★★★★★</span>
+
+5.0 Google Rating
+
+</div>
+
+
+<div class="amd-proof">
+
+<span>✓</span>
+
+100+ Cars Transformed
+
+</div>
+
+
+<div class="amd-proof">
+
+<span>✓</span>
+
+3 Years Experience
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- =========================================================
+QUIZ
+========================================================= -->
+
+<div
+class="amd-quiz"
+id="quote"
+>
+
+
+<div class="amd-quiz-top">
+
+
+<span
+class="amd-step-label"
+id="amdStepLabel"
+>
+STEP 1 OF 5
+</span>
+
+
+<div class="amd-progress">
+
+<span
+class="amd-progress-fill"
+id="amdProgress"
+></span>
+
+</div>
+
+
+</div>
+
+
+
+<!-- STEP 1 -->
+
+<div
+class="amd-quiz-step active"
+id="amd-step-1"
+>
+
+
+<h2>
+What does your car need?
+</h2>
+
+
+<p>
+Pick the closest detailing service.
+</p>
+
+
+<div class="amd-options">
+
+
+<button
+type="button"
+class="amd-option"
+onclick="amdChoose(this,'service','Complete Detail',2)"
+>
+
+<div class="amd-option-icon">
+A
+</div>
+
+<strong>
+Complete Detail
+</strong>
+
+<small>
+Interior + exterior vehicle reset
+</small>
+
+</button>
+
+
+
+<button
+type="button"
+class="amd-option"
+onclick="amdChoose(this,'service','Interior Detail',2)"
+>
+
+<div class="amd-option-icon">
+IN
+</div>
+
+<strong>
+Interior Reset
+</strong>
+
+<small>
+Deep-clean the cabin
+</small>
+
+</button>
+
+
+
+<button
+type="button"
+class="amd-option"
+onclick="amdChoose(this,'service','Exterior Detail',2)"
+>
+
+<div class="amd-option-icon">
+OUT
+</div>
+
+<strong>
+Exterior Detail
+</strong>
+
+<small>
+Wash, wheels and finish
+</small>
+
+</button>
+
+
+
+<button
+type="button"
+class="amd-option"
+onclick="amdChoose(this,'service','Maintenance Detail',2)"
+>
+
+<div class="amd-option-icon">
+↻
+</div>
+
+<strong>
+Maintenance Detail
+</strong>
+
+<small>
+Keep a clean car looking sharp
+</small>
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- STEP 2 -->
+
+<div
+class="amd-quiz-step"
+id="amd-step-2"
+>
+
+
+<h2>
+What are you driving?
+</h2>
+
+
+<p>
+Vehicle size helps determine the job.
+</p>
+
+
+<div class="amd-options">
+
+
+<button
+type="button"
+class="amd-option"
+onclick="amdChoose(this,'vehicle','Sedan / Coupe',3)"
+>
+
+<div class="amd-option-icon">
+1
+</div>
+
+<strong>
+Sedan / Coupe
+</strong>
+
+<small>
+Compact or standard car
+</small>
+
+</button>
+
+
+
+<button
+type="button"
+class="amd-option"
+onclick="amdChoose(this,'vehicle','Small SUV',3)"
+>
+
+<div class="amd-option-icon">
+2
+</div>
+
+<strong>
+Small SUV
+</strong>
+
+<small>
+Crossover or compact SUV
+</small>
+
+</button>
+
+
+
+<button
+type="button"
+class="amd-option"
+onclick="amdChoose(this,'vehicle','Large SUV / Truck',3)"
+>
+
+<div class="amd-option-icon">
+3
+</div>
+
+<strong>
+Large SUV / Truck
+</strong>
+
+<small>
+Full-size vehicle
+</small>
+
+</button>
+
+
+
+<button
+type="button"
+class="amd-option"
+onclick="amdChoose(this,'vehicle','Other Vehicle',3)"
+>
+
+<div class="amd-option-icon">
++
+</div>
+
+<strong>
+Other
+</strong>
+
+<small>
+Tell AMD what you're bringing
+</small>
+
+</button>
+
+
+</div>
+
+
+<button
+type="button"
+class="amd-quiz-back"
+onclick="amdGoStep(1)"
+>
+← Back
+</button>
+
+
+</div>
+
+
+
+<!-- STEP 3 -->
+
+<div
+class="amd-quiz-step"
+id="amd-step-3"
+>
+
+
+<h2>
+How dirty is it?
+</h2>
+
+
+<p>
+Pick the closest condition.
+</p>
+
+
+<div class="amd-options">
+
+
+<button
+type="button"
+class="amd-option"
+onclick="amdChoose(this,'condition','Light Maintenance',4)"
+>
+
+<div class="amd-option-icon">
+A
+</div>
+
+<strong>
+Light
+</strong>
+
+<small>
+Already fairly maintained
+</small>
+
+</button>
+
+
+
+<button
+type="button"
+class="amd-option"
+onclick="amdChoose(this,'condition','Normal Daily Use',4)"
+>
+
+<div class="amd-option-icon">
+B
+</div>
+
+<strong>
+Normal
+</strong>
+
+<small>
+Typical daily-driver dirt
+</small>
+
+</button>
+
+
+
+<button
+type="button"
+class="amd-option"
+onclick="amdChoose(this,'condition','Heavy Cleaning',4)"
+>
+
+<div class="amd-option-icon">
+C
+</div>
+
+<strong>
+Heavy
+</strong>
+
+<small>
+Stains, debris or serious buildup
+</small>
+
+</button>
+
+
+
+<button
+type="button"
+class="amd-option"
+onclick="amdChoose(this,'condition','Needs Full Reset',4)"
+>
+
+<div class="amd-option-icon">
+!
+</div>
+
+<strong>
+Needs A Reset
+</strong>
+
+<small>
+Let's bring it back
+</small>
+
+</button>
+
+
+</div>
+
+
+<button
+type="button"
+class="amd-quiz-back"
+onclick="amdGoStep(2)"
+>
+← Back
+</button>
+
+
+</div>
+
+
+
+<!-- STEP 4 -->
+
+<div
+class="amd-quiz-step"
+id="amd-step-4"
+>
+
+
+<h2>
+When do you want it detailed?
+</h2>
+
+
+<p>
+Choose your preferred timing.
+</p>
+
+
+<div class="amd-options">
+
+
+<button
+type="button"
+class="amd-option"
+onclick="amdChoose(this,'timeline','ASAP',5)"
+>
+
+<div class="amd-option-icon">
+⚡
+</div>
+
+<strong>
+ASAP
+</strong>
+
+<small>
+Ready to book quickly
+</small>
+
+</button>
+
+
+
+<button
+type="button"
+class="amd-option"
+onclick="amdChoose(this,'timeline','This Week',5)"
+>
+
+<div class="amd-option-icon">
+7
+</div>
+
+<strong>
+This Week
+</strong>
+
+<small>
+Looking for an appointment
+</small>
+
+</button>
+
+
+
+<button
+type="button"
+class="amd-option"
+onclick="amdChoose(this,'timeline','Flexible',5)"
+>
+
+<div class="amd-option-icon">
+~
+</div>
+
+<strong>
+Flexible
+</strong>
+
+<small>
+Can work around availability
+</small>
+
+</button>
+
+
+
+<button
+type="button"
+class="amd-option"
+onclick="amdChoose(this,'timeline','Getting Pricing',5)"
+>
+
+<div class="amd-option-icon">
+$
+</div>
+
+<strong>
+Getting Pricing
+</strong>
+
+<small>
+I want an estimate first
+</small>
+
+</button>
+
+
+</div>
+
+
+<button
+type="button"
+class="amd-quiz-back"
+onclick="amdGoStep(3)"
+>
+← Back
+</button>
+
+
+</div>
+
+
+
+<!-- STEP 5 -->
+
+<div
+class="amd-quiz-step"
+id="amd-step-5"
+>
+
+
+<h2>
+Request your detail.
+</h2>
+
+
+<p>
+Tell AMD where to reach you.
+</p>
+
+
+<form
+id="amdLeadForm"
+onsubmit="return amdSubmitLead(event)"
+>
+
+
+<div class="amd-form-grid">
+
+
+<div class="amd-field">
+
+<label>
+Name
+</label>
+
+<input
+type="text"
+id="amdName"
+placeholder="Your name"
+required
+>
+
+</div>
+
+
+
+<div class="amd-field">
+
+<label>
+Phone
+</label>
+
+<input
+type="tel"
+id="amdPhone"
+placeholder="(862) 555-1234"
+required
+>
+
+</div>
+
+
+
+<div class="amd-field">
+
+<label>
+Email
+</label>
+
+<input
+type="email"
+id="amdEmail"
+placeholder="you@email.com"
+>
+
+</div>
+
+
+
+<div class="amd-field">
+
+<label>
+ZIP Code
+</label>
+
+<input
+type="text"
+id="amdZip"
+placeholder="07503"
+required
+>
+
+</div>
+
+
+
+<div class="amd-consent">
+
+Continue to prepare an email with your detailing request.
+Your request is sent only after you press Send in your email app.
+
+</div>
+
+
+
+<div class="amd-field full">
+
+<button
+type="submit"
+class="amd-btn amd-btn-primary"
+style="width:100%;"
+>
+Continue to Email
+</button>
+
+</div>
+
+
+</div>
+
+
+<button
+type="button"
+class="amd-quiz-back"
+onclick="amdGoStep(4)"
+>
+← Back
+</button>
+
+
+</form>
+
+
+</div>
+
+
+
+<div class="amd-quiz-footer">
+
+✓ Paterson, NJ
+&nbsp; • &nbsp;
+5.0 Google rating
+&nbsp; • &nbsp;
+Professional detailing
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+COUNT-UP PROOF STRIP
+========================================================= -->
+
+<section class="amd-stats">
+
+
+<div class="amd-container">
+
+
+<div class="amd-stats-grid">
+
+
+<div class="amd-stat">
+
+<strong
+class="amd-count"
+data-target="5"
+data-suffix="★"
+>
+0
+</strong>
+
+<span>
+5-Star Reviews
+</span>
+
+</div>
+
+
+
+<div class="amd-stat">
+
+<strong
+class="amd-count"
+data-target="100"
+data-suffix="+"
+>
+0
+</strong>
+
+<span>
+Cars Transformed
+</span>
+
+</div>
+
+
+
+<div class="amd-stat">
+
+<strong
+class="amd-count"
+data-target="3"
+data-suffix=""
+>
+0
+</strong>
+
+<span>
+Years Experience
+</span>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+BEFORE / AFTER
+========================================================= -->
+
+<section
+class="amd-section amd-transform"
+id="results"
+>
+
+
+<div class="amd-container">
+
+
+<div class="amd-transform-grid">
+
+
+<div
+class="amd-ba-shell amd-reveal"
+id="amdBeforeAfter"
+>
+
+
+<!-- CLEAN AFTER -->
+
+<div class="amd-ba-layer amd-ba-after">
+
+<img
+src="https://images.pexels.com/photos/8662678/pexels-photo-8662678.jpeg?auto=compress&cs=tinysrgb&w=1800"
+alt="Clean detailed black BMW"
+>
+
+</div>
+
+
+<!-- SAME VEHICLE / SAME GEOMETRY / DIRTY TREATMENT -->
+
+<div class="amd-ba-layer amd-ba-before">
+
+<img
+src="https://images.pexels.com/photos/8662678/pexels-photo-8662678.jpeg?auto=compress&cs=tinysrgb&w=1800"
+alt="Vehicle before detailing"
+>
+
+</div>
+
+
+<div class="amd-ba-label before">
+Before
+</div>
+
+
+<div class="amd-ba-label after">
+After
+</div>
+
+
+<div class="amd-ba-divider"></div>
+
+
+<div class="amd-ba-handle">
+‹ &nbsp; ›
+</div>
+
+
+<input
+type="range"
+min="0"
+max="100"
+value="50"
+class="amd-ba-input"
+oninput="amdUpdateSlider(this)"
+onchange="amdUpdateSlider(this)"
+aria-label="Compare car before and after detailing"
+>
+
+
+</div>
+
+
+
+<div class="amd-transform-copy amd-reveal">
+
+
+<div class="amd-eyebrow">
+Drag The Transformation
+</div>
+
+
+<h2>
+
+The Same Car.
+
+<span class="amd-accent">
+A Completely Different Presence.
+</span>
+
+</h2>
+
+
+<p>
+
+A proper detail changes how the entire
+vehicle feels.
+
+Paint looks deeper. Wheels look sharper.
+The interior feels cleaner. The small
+areas people normally ignore finally
+get the attention they need.
+
+The vehicle image stays completely fixed
+while you drag. Only the reveal boundary moves,
+so the car never stretches or shifts.
+
+</p>
+
+
+
+<div class="amd-result-list">
+
+
+<div class="amd-result">
+
+<div class="amd-result-icon">
+✦
+</div>
+
+<div>
+
+<strong>
+Restore The Finish
+</strong>
+
+<small>
+Bring back depth, shine and a cleaner overall appearance.
+</small>
+
+</div>
+
+</div>
+
+
+
+<div class="amd-result">
+
+<div class="amd-result-icon">
+IN
+</div>
+
+<div>
+
+<strong>
+Reset The Interior
+</strong>
+
+<small>
+Get dirt and everyday buildup out of the cabin.
+</small>
+
+</div>
+
+</div>
+
+
+
+<div class="amd-result">
+
+<div class="amd-result-icon">
+✓
+</div>
+
+<div>
+
+<strong>
+Feel Good Driving It Again
+</strong>
+
+<small>
+A truly clean car feels different every time you get in.
+</small>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<button
+type="button"
+class="amd-btn amd-btn-primary"
+onclick="amdScrollQuote()"
+>
+Transform My Car
+</button>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+PICK YOUR SERVICE
+========================================================= -->
+
+<section
+class="amd-section amd-services"
+id="services"
+>
+
+
+<div class="amd-container">
+
+
+<div class="amd-section-head amd-reveal">
+
+
+<div class="amd-eyebrow">
+Pick Your Service
+</div>
+
+
+<h2>
+
+How Far Do You Want
+
+To Take
+
+<span class="amd-accent">
+The Transformation?
+</span>
+
+</h2>
+
+
+<p>
+
+Choose the level closest to what
+your vehicle needs. Final scope and
+pricing can be confirmed directly
+with Any Means Detailing.
+
+</p>
+
+
+</div>
+
+
+
+<div class="amd-service-grid">
+
+
+<!-- FULL -->
+
+<article class="amd-service amd-reveal">
+
+
+<img
+src="https://images.pexels.com/photos/6873174/pexels-photo-6873174.jpeg?auto=compress&cs=tinysrgb&w=1400"
+alt="Complete car detailing"
+>
+
+
+<div class="amd-service-copy">
+
+
+<div class="amd-service-num">
+01 / Complete
+</div>
+
+
+<h3>
+Complete Detail
+</h3>
+
+
+<p>
+
+A full interior and exterior reset
+for drivers who want the whole
+vehicle brought back together.
+
+</p>
+
+
+<button
+type="button"
+onclick="amdPreselect('Complete Detail')"
+>
+SELECT COMPLETE DETAIL
+</button>
+
+
+</div>
+
+
+</article>
+
+
+
+<!-- INTERIOR -->
+
+<article class="amd-service amd-reveal">
+
+
+<img
+src="https://images.pexels.com/photos/6873103/pexels-photo-6873103.jpeg?auto=compress&cs=tinysrgb&w=1400"
+alt="Interior car detailing"
+>
+
+
+<div class="amd-service-copy">
+
+
+<div class="amd-service-num">
+02 / Interior
+</div>
+
+
+<h3>
+Interior Reset
+</h3>
+
+
+<p>
+
+Focus the detail inside the vehicle
+and bring the cabin back to a
+cleaner, more comfortable condition.
+
+</p>
+
+
+<button
+type="button"
+onclick="amdPreselect('Interior Detail')"
+>
+SELECT INTERIOR DETAIL
+</button>
+
+
+</div>
+
+
+</article>
+
+
+
+<!-- EXTERIOR -->
+
+<article class="amd-service amd-reveal">
+
+
+<img
+src="https://images.pexels.com/photos/6873121/pexels-photo-6873121.jpeg?auto=compress&cs=tinysrgb&w=1400"
+alt="Exterior car detailing"
+>
+
+
+<div class="amd-service-copy">
+
+
+<div class="amd-service-num">
+03 / Exterior
+</div>
+
+
+<h3>
+Exterior Detail
+</h3>
+
+
+<p>
+
+Give the outside of the car the
+attention needed to look clean,
+sharp and properly finished.
+
+</p>
+
+
+<button
+type="button"
+onclick="amdPreselect('Exterior Detail')"
+>
+SELECT EXTERIOR DETAIL
+</button>
+
+
+</div>
+
+
+</article>
+
+
+
+<!-- MAINTENANCE -->
+
+<article class="amd-service amd-reveal">
+
+
+<img
+src="https://images.pexels.com/photos/5693659/pexels-photo-5693659.jpeg?auto=compress&cs=tinysrgb&w=1400"
+alt="Maintenance vehicle detailing"
+>
+
+
+<div class="amd-service-copy">
+
+
+<div class="amd-service-num">
+04 / Maintain
+</div>
+
+
+<h3>
+Maintenance Detail
+</h3>
+
+
+<p>
+
+Already had the car cleaned?
+Keep the vehicle from falling
+back into heavy buildup again.
+
+</p>
+
+
+<button
+type="button"
+onclick="amdPreselect('Maintenance Detail')"
+>
+SELECT MAINTENANCE
+</button>
+
+
+</div>
+
+
+</article>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+WHY AMD
+========================================================= -->
+
+<section
+class="amd-section amd-standard"
+id="standard"
+>
+
+
+<div class="amd-container">
+
+
+<div class="amd-standard-grid">
+
+
+<div class="amd-standard-copy amd-reveal">
+
+
+<div class="amd-eyebrow">
+The Any Means Standard
+</div>
+
+
+<h2>
+
+It Is Called
+
+Detailing
+
+<span class="amd-accent">
+For A Reason.
+</span>
+
+</h2>
+
+
+<p>
+
+A drive-through wash gets the obvious dirt.
+
+Detailing is about what happens after that.
+
+Seats, vents, trim, wheels, door areas,
+glass, tight spaces and the finish itself
+all contribute to whether the car actually
+feels clean when the work is done.
+
+The available Google feedback for AMD
+specifically highlights the transformation
+quality and describes a vehicle coming
+back with a dealership-like finish.
+
+</p>
+
+
+
+<div class="amd-benefits">
+
+
+<div class="amd-benefit">
+
+<strong>
+Interior Attention
+</strong>
+
+<p>
+
+Focus on the surfaces and tight areas
+that quick washes usually ignore.
+
+</p>
+
+</div>
+
+
+
+<div class="amd-benefit">
+
+<strong>
+Exterior Finish
+</strong>
+
+<p>
+
+A detailed exterior is about more than
+simply spraying water at the car.
+
+</p>
+
+</div>
+
+
+
+<div class="amd-benefit">
+
+<strong>
+Owner Involvement
+</strong>
+
+<p>
+
+The available public review specifically
+references dealing directly with the owner.
+
+</p>
+
+</div>
+
+
+
+<div class="amd-benefit">
+
+<strong>
+Transformation
+</strong>
+
+<p>
+
+The goal is for the vehicle to look and
+feel dramatically better when it leaves.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="amd-standard-photo amd-reveal">
+
+
+<img
+src="https://images.pexels.com/photos/6873185/pexels-photo-6873185.jpeg?auto=compress&cs=tinysrgb&w=1400"
+alt="Professional interior car cleaning"
+>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+VISUAL GALLERY
+========================================================= -->
+
+<section
+class="amd-section amd-gallery"
+id="work"
+>
+
+
+<div class="amd-container">
+
+
+<div class="amd-section-head amd-reveal">
+
+
+<div class="amd-eyebrow">
+The Detailing Standard
+</div>
+
+
+<h2>
+
+Clean Is Good.
+
+<span class="amd-accent">
+Detailed Is Different.
+</span>
+
+</h2>
+
+
+<p>
+
+These supporting images visualize the
+type of detailing work shown throughout
+the site. For AMD's current project photos,
+visit their Instagram directly below.
+
+</p>
+
+
+</div>
+
+
+
+<div class="amd-gallery-grid">
+
+
+<div class="amd-gallery-card amd-reveal">
+
+
+<img
+src="https://images.pexels.com/photos/6872172/pexels-photo-6872172.jpeg?auto=compress&cs=tinysrgb&w=1600"
+alt="Professional foam car detailing"
+>
+
+
+<div class="amd-gallery-note">
+Detailing Preview
+</div>
+
+
+<div class="amd-gallery-label">
+Exterior Detail
+</div>
+
+
+</div>
+
+
+
+<div class="amd-gallery-card amd-reveal">
+
+
+<img
+src="https://images.pexels.com/photos/5233285/pexels-photo-5233285.jpeg?auto=compress&cs=tinysrgb&w=1200"
+alt="Deep cleaning a car seat"
+>
+
+
+<div class="amd-gallery-note">
+Detailing Preview
+</div>
+
+
+<div class="amd-gallery-label">
+Deep Interior
+</div>
+
+
+</div>
+
+
+
+<div class="amd-gallery-card amd-reveal">
+
+
+<img
+src="https://images.pexels.com/photos/15002717/pexels-photo-15002717.jpeg?auto=compress&cs=tinysrgb&w=1200"
+alt="Wheel detailing"
+>
+
+
+<div class="amd-gallery-note">
+Detailing Preview
+</div>
+
+
+<div class="amd-gallery-label">
+Wheel Detail
+</div>
+
+
+</div>
+
+
+
+<div class="amd-gallery-card amd-reveal">
+
+
+<img
+src="https://images.pexels.com/photos/6873020/pexels-photo-6873020.jpeg?auto=compress&cs=tinysrgb&w=1200"
+alt="Car detailing brush work"
+>
+
+
+<div class="amd-gallery-note">
+Detailing Preview
+</div>
+
+
+<div class="amd-gallery-label">
+Fine Detail Work
+</div>
+
+
+</div>
+
+
+
+<div class="amd-gallery-card amd-reveal">
+
+
+<img
+src="https://images.pexels.com/photos/9138382/pexels-photo-9138382.jpeg?auto=compress&cs=tinysrgb&w=1200"
+alt="Clean luxury vehicle interior"
+>
+
+
+<div class="amd-gallery-note">
+Detailing Preview
+</div>
+
+
+<div class="amd-gallery-label">
+Clean Cabin
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="amd-instagram amd-reveal">
+
+
+<div>
+
+<h3>
+Want To See Actual AMD Work?
+</h3>
+
+<p>
+
+See current vehicles, details and
+transformations directly on
+@anymeans.detailing.
+
+</p>
+
+</div>
+
+
+<a
+href="https://www.instagram.com/anymeans.detailing/"
+target="_blank"
+rel="noopener"
+class="amd-btn amd-btn-primary"
+>
+VIEW AMD ON INSTAGRAM →
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+GOOGLE REVIEW / PROOF SLIDER
+========================================================= -->
+
+<section
+class="amd-section amd-reviews"
+id="reviews"
+>
+
+
+<div class="amd-section-head amd-reveal">
+
+
+<div class="amd-eyebrow">
+Google Feedback + Customer Proof
+</div>
+
+
+<h2>
+
+The Goal?
+
+<span class="amd-accent">
+Make It Feel New Again.
+</span>
+
+</h2>
+
+
+<p>
+
+AMD currently carries a 5.0 Google rating.
+The live public profile has limited review
+volume available, so this section uses the
+verified feedback that is publicly accessible
+instead of inventing customer quotes.
+
+</p>
+
+
+</div>
+
+
+
+<div class="amd-review-wrap">
+
+
+<div class="amd-review-track">
+
+
+<!-- CARD 1 -->
+
+<div class="amd-review">
+
+
+<div class="amd-stars">
+★★★★★
+</div>
+
+
+<h3>
+Google Review
+</h3>
+
+
+<p>
+
+“Astonished by how good it came out...
+looked exactly how it looked when
+it left the dealer.”
+
+</p>
+
+
+<div class="amd-review-user">
+
+<strong>
+Verified Customer Feedback
+</strong>
+
+<span>
+Any Means Detailing • Google
+</span>
+
+</div>
+
+
+</div>
+
+
+
+<!-- CARD 2 -->
+
+<div class="amd-review">
+
+
+<div class="amd-stars">
+★★★★★
+</div>
+
+
+<h3>
+5.0 Google Rating
+</h3>
+
+
+<p>
+
+Any Means Detailing's current
+Google Business Profile carries
+a perfect 5.0 rating in Paterson,
+New Jersey.
+
+</p>
+
+
+<div class="amd-review-user">
+
+<strong>
+Google Business Profile
+</strong>
+
+<span>
+Paterson, NJ
+</span>
+
+</div>
+
+
+</div>
+
+
+
+<!-- CARD 3 -->
+
+<div class="amd-review">
+
+
+<div class="amd-stars">
+100+
+</div>
+
+
+<h3>
+Cars Transformed
+</h3>
+
+
+<p>
+
+From everyday daily drivers
+to vehicles that need a serious reset,
+AMD has worked across more than
+100 vehicle transformations.
+
+</p>
+
+
+<div class="amd-review-user">
+
+<strong>
+Any Means Detailing
+</strong>
+
+<span>
+Customer Transformation Proof
+</span>
+
+</div>
+
+
+</div>
+
+
+
+<!-- CARD 4 -->
+
+<div class="amd-review">
+
+
+<div class="amd-stars">
+3 YEARS
+</div>
+
+
+<h3>
+Built Through Repetition
+</h3>
+
+
+<p>
+
+Three years of hands-on experience
+means the difference between simply
+washing a vehicle and knowing where
+the details actually hide.
+
+</p>
+
+
+<div class="amd-review-user">
+
+<strong>
+AMD Experience
+</strong>
+
+<span>
+Professional Detailing
+</span>
+
+</div>
+
+
+</div>
+
+
+
+<!-- DUPLICATE FOR CONTINUOUS LOOP -->
+
+<div class="amd-review">
+
+
+<div class="amd-stars">
+★★★★★
+</div>
+
+
+<h3>
+Google Review
+</h3>
+
+
+<p>
+
+“Astonished by how good it came out...
+looked exactly how it looked when
+it left the dealer.”
+
+</p>
+
+
+<div class="amd-review-user">
+
+<strong>
+Verified Customer Feedback
+</strong>
+
+<span>
+Any Means Detailing • Google
+</span>
+
+</div>
+
+
+</div>
+
+
+
+<div class="amd-review">
+
+
+<div class="amd-stars">
+★★★★★
+</div>
+
+
+<h3>
+5.0 Google Rating
+</h3>
+
+
+<p>
+
+Any Means Detailing's current
+Google Business Profile carries
+a perfect 5.0 rating in Paterson,
+New Jersey.
+
+</p>
+
+
+<div class="amd-review-user">
+
+<strong>
+Google Business Profile
+</strong>
+
+<span>
+Paterson, NJ
+</span>
+
+</div>
+
+
+</div>
+
+
+
+<div class="amd-review">
+
+
+<div class="amd-stars">
+100+
+</div>
+
+
+<h3>
+Cars Transformed
+</h3>
+
+
+<p>
+
+From everyday daily drivers
+to vehicles that need a serious reset,
+AMD has worked across more than
+100 vehicle transformations.
+
+</p>
+
+
+<div class="amd-review-user">
+
+<strong>
+Any Means Detailing
+</strong>
+
+<span>
+Customer Transformation Proof
+</span>
+
+</div>
+
+
+</div>
+
+
+
+<div class="amd-review">
+
+
+<div class="amd-stars">
+3 YEARS
+</div>
+
+
+<h3>
+Built Through Repetition
+</h3>
+
+
+<p>
+
+Three years of hands-on experience
+means the difference between simply
+washing a vehicle and knowing where
+the details actually hide.
+
+</p>
+
+
+<div class="amd-review-user">
+
+<strong>
+AMD Experience
+</strong>
+
+<span>
+Professional Detailing
+</span>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+PROCESS
+========================================================= -->
+
+<section
+class="amd-section amd-process"
+id="process"
+>
+
+
+<div class="amd-container">
+
+
+<div class="amd-section-head amd-reveal">
+
+
+<div class="amd-eyebrow">
+How It Works
+</div>
+
+
+<h2>
+
+Four Steps.
+
+<span class="amd-accent">
+One Cleaner Car.
+</span>
+
+</h2>
+
+
+</div>
+
+
+
+<div class="amd-process-grid">
+
+
+<div class="amd-process-card amd-reveal">
+
+
+<div class="amd-process-num">
+01
+</div>
+
+
+<h3>
+Choose The Detail
+</h3>
+
+
+<p>
+
+Tell AMD whether you need
+interior, exterior, a full reset
+or maintenance service.
+
+</p>
+
+
+</div>
+
+
+
+<div class="amd-process-card amd-reveal">
+
+
+<div class="amd-process-num">
+02
+</div>
+
+
+<h3>
+Review The Car
+</h3>
+
+
+<p>
+
+Vehicle size and current condition
+help determine how much work
+the detail actually requires.
+
+</p>
+
+
+</div>
+
+
+
+<div class="amd-process-card amd-reveal">
+
+
+<div class="amd-process-num">
+03
+</div>
+
+
+<h3>
+Detail The Vehicle
+</h3>
+
+
+<p>
+
+Work through the interior,
+exterior and agreed detail areas
+instead of rushing the finish.
+
+</p>
+
+
+</div>
+
+
+
+<div class="amd-process-card amd-reveal">
+
+
+<div class="amd-process-num">
+04
+</div>
+
+
+<h3>
+Get The Car Back
+</h3>
+
+
+<p>
+
+Walk away with a vehicle
+that looks cleaner, feels better
+and is ready to be enjoyed again.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+AREA
+========================================================= -->
+
+<section class="amd-section amd-area">
+
+
+<div class="amd-container">
+
+
+<div class="amd-area-card amd-reveal">
+
+
+<div class="amd-eyebrow">
+North Jersey Detailing
+</div>
+
+
+<h2>
+
+Based In Paterson.
+
+<span class="amd-accent">
+Built For Cars That Deserve Better.
+</span>
+
+</h2>
+
+
+<p>
+
+Any Means Detailing's current
+Google listing identifies the business
+in Paterson, New Jersey.
+
+For exact scheduling, service details
+and current availability, call AMD directly
+or submit your ZIP code through the
+detail builder above.
+
+</p>
+
+
+
+<div class="amd-area-grid">
+
+
+<div class="amd-area-chip">
+Paterson
+</div>
+
+
+<div class="amd-area-chip">
+Passaic County
+</div>
+
+
+<div class="amd-area-chip">
+North Jersey
+</div>
+
+
+<div class="amd-area-chip">
+Cars
+</div>
+
+
+<div class="amd-area-chip">
+SUVs
+</div>
+
+
+<div class="amd-area-chip">
+Trucks
+</div>
+
+
+<div class="amd-area-chip">
+Interior
+</div>
+
+
+<div class="amd-area-chip">
+Exterior
+</div>
+
+
+</div>
+
+
+
+<button
+type="button"
+class="amd-btn amd-btn-primary"
+onclick="amdScrollQuote()"
+>
+Build My Detail
+</button>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+FAQ
+========================================================= -->
+
+<section
+class="amd-section amd-faq"
+id="faq"
+>
+
+
+<div class="amd-container">
+
+
+<div class="amd-section-head amd-reveal">
+
+
+<div class="amd-eyebrow">
+FAQ
+</div>
+
+
+<h2>
+
+Before Your
+
+<span class="amd-accent">
+Detail.
+</span>
+
+</h2>
+
+
+</div>
+
+
+
+<div class="amd-faq-list">
+
+
+<div class="amd-faq-item">
+
+
+<button
+type="button"
+class="amd-faq-question"
+onclick="amdToggleFaq(this)"
+>
+
+<span>
+What does Any Means Detailing do?
+</span>
+
+<span class="amd-faq-symbol">
++
+</span>
+
+</button>
+
+
+<div class="amd-faq-answer">
+
+<p>
+
+The current Google Business Profile categorizes
+Any Means Detailing as both auto detailing
+and car wash service. Use the quote builder
+or call directly to confirm the exact package
+available for your vehicle.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="amd-faq-item">
+
+
+<button
+type="button"
+class="amd-faq-question"
+onclick="amdToggleFaq(this)"
+>
+
+<span>
+Can I book an interior-only detail?
+</span>
+
+<span class="amd-faq-symbol">
++
+</span>
+
+</button>
+
+
+<div class="amd-faq-answer">
+
+<p>
+
+The website's quote builder lets you request
+an interior-focused detail. AMD can confirm
+the exact scope and pricing after reviewing
+your vehicle and its condition.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="amd-faq-item">
+
+
+<button
+type="button"
+class="amd-faq-question"
+onclick="amdToggleFaq(this)"
+>
+
+<span>
+Can I request a full interior and exterior detail?
+</span>
+
+<span class="amd-faq-symbol">
++
+</span>
+
+</button>
+
+
+<div class="amd-faq-answer">
+
+<p>
+
+Yes. Choose Complete Detail in the quote
+builder to request an interior and exterior
+vehicle reset.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="amd-faq-item">
+
+
+<button
+type="button"
+class="amd-faq-question"
+onclick="amdToggleFaq(this)"
+>
+
+<span>
+Does vehicle size affect the job?
+</span>
+
+<span class="amd-faq-symbol">
++
+</span>
+
+</button>
+
+
+<div class="amd-faq-answer">
+
+<p>
+
+Vehicle size and condition can affect the
+amount of time and work required, which is
+why the estimate funnel asks what you drive
+before the request is submitted.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="amd-faq-item">
+
+
+<button
+type="button"
+class="amd-faq-question"
+onclick="amdToggleFaq(this)"
+>
+
+<span>
+Where is Any Means Detailing located?
+</span>
+
+<span class="amd-faq-symbol">
++
+</span>
+
+</button>
+
+
+<div class="amd-faq-answer">
+
+<p>
+
+The current public business listing identifies
+Any Means Detailing in Paterson, New Jersey 07503.
+Call 862-621-8676 to confirm current scheduling
+and location details before arriving.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="amd-faq-item">
+
+
+<button
+type="button"
+class="amd-faq-question"
+onclick="amdToggleFaq(this)"
+>
+
+<span>
+Where can I see AMD's current work?
+</span>
+
+<span class="amd-faq-symbol">
++
+</span>
+
+</button>
+
+
+<div class="amd-faq-answer">
+
+<p>
+
+Visit @anymeans.detailing on Instagram.
+The gallery link on this website goes
+directly to AMD's Instagram profile.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+FINAL CTA
+========================================================= -->
+
+<section class="amd-final">
+
+
+<div class="amd-final-bg">
+
+
+<img
+src="https://images.pexels.com/photos/8662678/pexels-photo-8662678.jpeg?auto=compress&cs=tinysrgb&w=1800"
+alt="Clean black luxury car"
+>
+
+
+</div>
+
+
+
+<div class="amd-container">
+
+
+<div class="amd-final-copy amd-reveal">
+
+
+<div class="amd-eyebrow">
+Any Means Detailing
+</div>
+
+
+<h2>
+
+Your Car Already
+
+Has The Look.
+
+<span class="amd-accent">
+Let's Bring It Back.
+</span>
+
+</h2>
+
+
+<p>
+
+Interior reset, exterior detail,
+complete transformation or
+maintenance service.
+
+Build your detail and let AMD
+review what the vehicle needs.
+
+</p>
+
+
+
+<div class="amd-final-actions">
+
+
+<button
+type="button"
+class="amd-btn amd-btn-primary"
+onclick="amdScrollQuote()"
+>
+Build My Detail
+</button>
+
+
+<a
+href="tel:+18626218676"
+class="amd-btn amd-btn-outline"
+>
+862-621-8676
+</a>
+
+
+<a
+href="https://www.instagram.com/anymeans.detailing/"
+target="_blank"
+rel="noopener"
+class="amd-btn amd-btn-outline"
+>
+Instagram
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+FOOTER
+========================================================= -->
+
+<footer class="amd-footer">
+
+
+<div class="amd-container">
+
+
+<div class="amd-footer-grid">
+
+
+<div>
+
+
+<div class="amd-brand">
+
+
+<div
+class="amd-logo"
+style="width:72px;height:72px;"
+></div>
+
+
+<div class="amd-wordmark">
+
+<strong>
+ANY MEANS <span>DETAILING</span>
+</strong>
+
+<small>
+Paterson • New Jersey
+</small>
+
+</div>
+
+
+</div>
+
+
+<p style="margin-top:18px;">
+
+Professional auto detailing
+and vehicle cleaning serving
+drivers in the Paterson,
+New Jersey area.
+
+</p>
+
+
+</div>
+
+
+
+<div>
+
+
+<h4>
+Services
+</h4>
+
+
+<div class="amd-footer-links">
+
+<span>
+Complete Detail
+</span>
+
+<span>
+Interior Detail
+</span>
+
+<span>
+Exterior Detail
+</span>
+
+<span>
+Maintenance Detail
+</span>
+
+</div>
+
+
+</div>
+
+
+
+<div>
+
+
+<h4>
+Contact
+</h4>
+
+
+<div class="amd-footer-links">
+
+<a href="tel:+18626218676">
+862-621-8676
+</a>
+
+<span>
+Paterson, NJ 07503
+</span>
+
+<a
+href="https://www.instagram.com/anymeans.detailing/"
+target="_blank"
+rel="noopener"
+>
+@anymeans.detailing
+</a>
+
+</div>
+
+
+</div>
+
+
+
+<div>
+
+
+<h4>
+Quick Links
+</h4>
+
+
+<div class="amd-footer-links">
+
+<a href="#results">
+Before / After
+</a>
+
+<a href="#services">
+Pick A Service
+</a>
+
+<a href="#work">
+Gallery
+</a>
+
+<a href="#reviews">
+Reviews
+</a>
+
+<a href="#faq">
+FAQ
+</a>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="amd-footer-bottom">
+
+
+<span>
+© 2026 Any Means Detailing.
+All Rights Reserved.
+</span>
+
+
+<span>
+Paterson • New Jersey
+</span>
+
+
+</div>
+
+
+</div>
+
+
+</footer>
+
+
+
+<!-- =========================================================
+DESKTOP FLOATING CTA
+========================================================= -->
+
+<button
+type="button"
+class="amd-floating"
+onclick="amdScrollQuote()"
+>
+BOOK MY DETAIL
+</button>
+
+
+
+<!-- =========================================================
+MOBILE STICKY CTA
+========================================================= -->
+
+<div class="amd-mobile-actions">
+
+
+<a href="tel:+18626218676">
+CALL AMD
+</a>
+
+
+<button
+type="button"
+onclick="amdScrollQuote()"
+>
+BOOK DETAIL
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- =========================================================
+FUNCTIONALITY
+========================================================= -->
+
+<script>
+
+/* =========================================================
+HERO VIDEO AUTOPLAY RETRIES
+========================================================= */
+
+(function() {
+
+    var video =
+        document.getElementById(
+            "amdHeroVideo"
+        );
+
+
+    if (!video) return;
+
+
+    function attemptPlay() {
+
+        try {
+
+            video.muted =
+                true;
+
+
+            video.defaultMuted =
+                true;
+
+
+            var promise =
+                video.play();
+
+
+            if (
+                promise &&
+                typeof promise.catch ===
+                "function"
+            ) {
+
+                promise.catch(
+                    function() {}
+                );
+
+            }
+
+        }
+
+        catch(error) {}
+
+    }
+
+
+    video.addEventListener(
+        "loadedmetadata",
+        attemptPlay
+    );
+
+
+    video.addEventListener(
+        "loadeddata",
+        attemptPlay
+    );
+
+
+    video.addEventListener(
+        "canplay",
+        attemptPlay
+    );
+
+
+    window.addEventListener(
+        "load",
+        attemptPlay
+    );
+
+
+    document.addEventListener(
+        "visibilitychange",
+        function() {
+
+            if (
+                document.visibilityState ===
+                "visible"
+            ) {
+
+                attemptPlay();
+
+            }
+
+        }
+    );
+
+
+    setTimeout(
+        attemptPlay,
+        300
+    );
+
+
+    setTimeout(
+        attemptPlay,
+        1000
+    );
+
+
+    setTimeout(
+        attemptPlay,
+        2500
+    );
+
+})();
+
+
+/* =========================================================
+COUNT UP STATS
+========================================================= */
+
+(function() {
+
+    var counters =
+        document.querySelectorAll(
+            ".amd-count"
+        );
+
+
+    if (!counters.length) return;
+
+
+    var started =
+        false;
+
+
+    function runCounters() {
+
+        if (started) return;
+
+
+        started =
+            true;
+
+
+        counters.forEach(
+            function(counter) {
+
+                var target =
+                    Number(
+                        counter.getAttribute(
+                            "data-target"
+                        )
+                    ) || 0;
+
+
+                var suffix =
+                    counter.getAttribute(
+                        "data-suffix"
+                    ) || "";
+
+
+                var duration =
+                    1300;
+
+
+                var start =
+                    performance.now();
+
+
+                function frame(now) {
+
+                    var progress =
+                        Math.min(
+                            1,
+                            (
+                                now -
+                                start
+                            ) /
+                            duration
+                        );
+
+
+                    var eased =
+                        1 -
+                        Math.pow(
+                            1 - progress,
+                            3
+                        );
+
+
+                    var current =
+                        Math.round(
+                            target *
+                            eased
+                        );
+
+
+                    counter.textContent =
+                        current +
+                        suffix;
+
+
+                    if (
+                        progress <
+                        1
+                    ) {
+
+                        requestAnimationFrame(
+                            frame
+                        );
+
+                    }
+
+                }
+
+
+                requestAnimationFrame(
+                    frame
+                );
+
+            }
+        );
+
+    }
+
+
+    var stats =
+        document.querySelector(
+            ".amd-stats"
+        );
+
+
+    if (
+        "IntersectionObserver" in
+        window &&
+        stats
+    ) {
+
+        var observer =
+            new IntersectionObserver(
+                function(entries) {
+
+                    entries.forEach(
+                        function(entry) {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                runCounters();
+
+                                observer.disconnect();
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold:
+                        .25
+                }
+            );
+
+
+        observer.observe(
+            stats
+        );
+
+    }
+
+    else {
+
+        runCounters();
+
+    }
+
+})();
+
+
+/* =========================================================
+SCROLL REVEALS
+========================================================= */
+
+(function() {
+
+    var reveals =
+        document.querySelectorAll(
+            ".amd-reveal"
+        );
+
+
+    if (
+        !reveals.length
+    ) return;
+
+
+    if (
+        !(
+            "IntersectionObserver"
+            in window
+        )
+    ) {
+
+        reveals.forEach(
+            function(el) {
+
+                el.classList.add(
+                    "amd-visible"
+                );
+
+            }
+        );
+
+
+        return;
+
+    }
+
+
+    var observer =
+        new IntersectionObserver(
+            function(entries) {
+
+                entries.forEach(
+                    function(entry) {
+
+                        if (
+                            entry.isIntersecting
+                        ) {
+
+                            entry.target
+                            .classList
+                            .add(
+                                "amd-visible"
+                            );
+
+
+                            observer.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    }
+                );
+
+            },
+            {
+                threshold:
+                    .12
+            }
+        );
+
+
+    reveals.forEach(
+        function(el) {
+
+            observer.observe(
+                el
+            );
+
+        }
+    );
+
+})();
+
+
+/* =========================================================
+LEAD SUBMISSION
+========================================================= */
+
+window.amdSubmitLead =
+async function(event) {
+
+
+    event.preventDefault();
+
+
+    var name =
+        document.getElementById(
+            "amdName"
+        ).value.trim();
+
+
+    var phone =
+        document.getElementById(
+            "amdPhone"
+        ).value.trim();
+
+
+    var email =
+        document.getElementById(
+            "amdEmail"
+        ).value.trim();
+
+
+    var zip =
+        document.getElementById(
+            "amdZip"
+        ).value.trim();
+
+
+    if (
+        !name ||
+        !phone ||
+        !zip
+    ) {
+
+        alert(
+            "Please enter your name, phone number and ZIP code."
+        );
+
+
+        return false;
+
+    }
+
+
+    var lead = {
+
+
+        name:
+            name,
+
+
+        phone:
+            phone,
+
+
+        email:
+            email,
+
+
+        zip:
+            zip,
+
+
+        service:
+            window.amdAnswers.service,
+
+
+        vehicle:
+            window.amdAnswers.vehicle,
+
+
+        condition:
+            window.amdAnswers.condition,
+
+
+        timeline:
+            window.amdAnswers.timeline,
+
+
+        source:
+            "Any Means Detailing Website Quiz",
+
+
+        submitted_at:
+            new Date()
+            .toISOString()
+
+    };
+
+
+    try {
+
+        localStorage.setItem(
+            "any_means_detailing_latest_lead",
+            JSON.stringify(
+                lead
+            )
+        );
+
+    }
+
+    catch(error) {}
+
+
+    /*
+    =========================================================
+    ADD GHL INBOUND WEBHOOK HERE
+    =========================================================
+    */
+
+
+    var GHL_WEBHOOK_URL = "";
+
+    // Until a lead endpoint is connected, offer a real email handoff
+    // rather than incorrectly telling visitors their request was received.
+    if (!GHL_WEBHOOK_URL) {
+        var emailBody = [
+            "New detailing request",
+            "Name: " + name,
+            "Phone: " + phone,
+            "Email: " + (email || "Not provided"),
+            "ZIP: " + zip,
+            "Service: " + lead.service,
+            "Vehicle: " + lead.vehicle,
+            "Condition: " + lead.condition,
+            "Timeline: " + lead.timeline
+        ].join("\n");
+        var emailHref = "mailto:anymeans.detailingnj@gmail.com?subject=" +
+            encodeURIComponent("Detail Request | " + name) +
+            "&body=" + encodeURIComponent(emailBody);
+        var quotePanel = document.getElementById("quote");
+        if (quotePanel) {
+            quotePanel.innerHTML =
+                '<div style="padding:38px 22px;text-align:center;max-width:500px;margin:auto">' +
+                '<h3 style="font-family:Oswald,sans-serif;font-size:34px;text-transform:uppercase">One More Step</h3>' +
+                '<p style="color:#d4dae6">Your request is ready. Open your email app and press Send so the detailing team receives it.</p>' +
+                '<a class="amd-btn amd-btn-primary" href="' + emailHref + '">Open Email to Send Request</a>' +
+                '<p style="color:#9fa6b8;margin-top:24px">Prefer to call? <a href="tel:+18626218676" style="color:#74b9ff">862-621-8676</a></p>' +
+                '</div>';
+        }
+        return false;
+    }
+
+
+
+    if (
+        GHL_WEBHOOK_URL &&
+        GHL_WEBHOOK_URL
+        .indexOf(
+            "http"
+        ) === 0
+    ) {
+
+        try {
+
+            await fetch(
+                GHL_WEBHOOK_URL,
+                {
+
+                    method:
+                        "POST",
+
+
+                    headers: {
+
+                        "Content-Type":
+                            "application/json"
+
+                    },
+
+
+                    body:
+                        JSON.stringify(
+                            lead
+                        )
+
+                }
+            );
+
+        }
+
+        catch(error) {
+
+            console.log(
+                error
+            );
+
+        }
+
+    }
+
+
+    var quote =
+        document.getElementById(
+            "quote"
+        );
+
+
+    if (quote) {
+
+
+        quote.innerHTML =
+
+        '<div style="' +
+
+            'padding:42px 25px;' +
+
+            'display:flex;' +
+
+            'align-items:center;' +
+
+            'justify-content:center;' +
+
+            'text-align:center;' +
+
+        '">' +
+
+
+            '<div>' +
+
+
+                '<div style="' +
+
+                    'width:68px;' +
+
+                    'height:68px;' +
+
+                    'margin:0 auto 18px;' +
+
+                    'display:flex;' +
+
+                    'align-items:center;' +
+
+                    'justify-content:center;' +
+
+                    'border:1px solid #74b9ff;' +
+
+                    'border-radius:50%;' +
+
+                    'background:rgba(116,185,255,.08);' +
+
+                    'color:#74b9ff;' +
+
+                    'font-size:26px;' +
+
+                '">' +
+
+                    '✓' +
+
+                '</div>' +
+
+
+                '<h3 style="' +
+
+                    'margin:0 0 10px;' +
+
+                    'font-family:Oswald,sans-serif;' +
+
+                    'font-size:38px;' +
+
+                    'line-height:1;' +
+
+                    'text-transform:uppercase;' +
+
+                '">' +
+
+                    'Detail Request Received' +
+
+                '</h3>' +
+
+
+                '<p style="' +
+
+                    'max-width:420px;' +
+
+                    'margin:0 auto 23px;' +
+
+                    'color:#9fa6b8;' +
+
+                    'font-size:12px;' +
+
+                '">' +
+
+                    'Thanks, ' +
+
+                    name +
+
+                    '. Any Means Detailing can now review your vehicle and service request.' +
+
+                '</p>' +
+
+
+                '<a ' +
+
+                    'href="tel:+18626218676" ' +
+
+                    'class="amd-btn amd-btn-primary"' +
+
+                '>' +
+
+                    'Call 862-621-8676' +
+
+                '</a>' +
+
+
+            '</div>' +
+
+
+        '</div>';
+
+    }
+
+
+    return false;
+
+};
+
+</script>
+
+<script>
+/* =========================================================
+MOBILE DOCK VIEWPORT FIX
+Moves the dock outside GHL layout wrappers and only shows it
+when it is useful. It hides over the quiz, near the final CTA,
+and while the iOS keyboard is open.
+========================================================= */
+(function () {
+    var dock = document.querySelector('#amd-site .amd-mobile-actions') ||
+               document.querySelector('.amd-mobile-actions');
+
+    if (!dock) return;
+
+    /* Escape any transformed or overflow-clipped GHL parent. */
+    if (dock.parentNode !== document.body) {
+        document.body.appendChild(dock);
+    }
+
+    var quote = document.getElementById('quote');
+    var finalSection = document.querySelector('.amd-final');
+    var quoteVisible = false;
+    var finalVisible = false;
+    var keyboardOpen = false;
+
+    function isMobile() {
+        return window.matchMedia('(max-width: 800px)').matches;
+    }
+
+    function updateKeyboardState() {
+        if (!window.visualViewport) {
+            keyboardOpen = false;
+            return;
+        }
+
+        var viewportLoss = window.innerHeight - window.visualViewport.height;
+        keyboardOpen = viewportLoss > 170;
+    }
+
+    function updateDock() {
+        updateKeyboardState();
+
+        var shouldShow =
+            isMobile() &&
+            window.scrollY > 180 &&
+            !quoteVisible &&
+            !finalVisible &&
+            !keyboardOpen;
+
+        dock.classList.toggle('amd-dock-visible', shouldShow);
+    }
+
+    if ('IntersectionObserver' in window) {
+        if (quote) {
+            new IntersectionObserver(function (entries) {
+                quoteVisible = entries[0].isIntersecting &&
+                               entries[0].intersectionRatio > 0.12;
+                updateDock();
+            }, {
+                threshold: [0, 0.12, 0.3]
+            }).observe(quote);
+        }
+
+        if (finalSection) {
+            new IntersectionObserver(function (entries) {
+                finalVisible = entries[0].isIntersecting;
+                updateDock();
+            }, {
+                threshold: [0, 0.08]
+            }).observe(finalSection);
+        }
+    }
+
+    window.addEventListener('scroll', updateDock, { passive: true });
+    window.addEventListener('resize', updateDock, { passive: true });
+    window.addEventListener('orientationchange', function () {
+        setTimeout(updateDock, 120);
+    }, { passive: true });
+
+    if (window.visualViewport) {
+        window.visualViewport.addEventListener('resize', updateDock, { passive: true });
+        window.visualViewport.addEventListener('scroll', updateDock, { passive: true });
+    }
+
+    updateDock();
+})();
+</script>
+
+</body>
+</html>

@@ -6326,6 +6326,37 @@ TIGHTER HERO RHYTHM + TRUE VIEWPORT MOBILE DOCK
 #amd-site .amd-service .amd-service-link:focus-visible{outline:3px solid #9acaff;outline-offset:3px}
 @media(max-width:700px){#amd-site .amd-service .amd-service-link{min-height:51px;padding:14px;font-size:11px;touch-action:manipulation}}
 @media(prefers-reduced-motion:reduce){#amd-site .amd-service .amd-service-link{transition:none}#amd-site .amd-service .amd-service-link:hover{transform:none}}
+
+/* Mobile sticky CTA lives under <body>, outside #amd-site, so style it explicitly. */
+.amd-mobile-actions a,
+.amd-mobile-actions button {
+    font-family: "DM Sans", Arial, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    letter-spacing: .025em !important;
+    line-height: 1.2 !important;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    -webkit-font-smoothing: antialiased;
+}
+
+.amd-mobile-actions a {
+    color: #f7f8fc !important;
+    background: rgba(101, 70, 212, .22) !important;
+    border: 1px solid rgba(142, 120, 255, .65) !important;
+}
+
+.amd-mobile-actions button {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #7658f0, #367ee8) !important;
+}
+
+.amd-mobile-actions a:focus-visible,
+.amd-mobile-actions button:focus-visible {
+    outline: 2px solid #74b9ff !important;
+    outline-offset: 2px;
+}
+
 </style>
 
 

@@ -1,0 +1,5 @@
+# Crawling rules for Any Means Detailing
+User-agent: *
+Allow: /
+
+Sitemap: https://www.anymeansdetailing.com/sitemap.xml

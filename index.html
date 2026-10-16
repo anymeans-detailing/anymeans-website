@@ -41,7 +41,7 @@ window.amdGoStep = function(step) {
 
     var steps =
         document.querySelectorAll(
-            "#amd-site .amd-quiz-step"
+            "#quote .amd-quiz-step"
         );
 
 
@@ -112,6 +112,9 @@ window.amdGoStep = function(step) {
 
     }
 
+    var popupWindow = document.querySelector("#amdQuoteModal .amd-quote-window");
+    if (popupWindow) popupWindow.scrollTop = 0;
+
 };
 
 
@@ -180,26 +183,97 @@ window.amdChoose = function(
 
 
 
-window.amdScrollQuote =
-function() {
-
-    var quote =
-        document.getElementById(
-            "quote"
-        );
-
-
+/* Open the existing quote quiz in a dialog, preserving its steps and form. */
+window.amdScrollQuote = function() {
+    var quote = document.getElementById("quote");
     if (!quote) return;
+    if (window.amdQuoteModalState && window.amdQuoteModalState.open) return;
 
-
-    quote.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-    });
-
-
+    var trigger = document.activeElement;
     window.amdCloseMenu();
 
+    /* Preserve the quiz's original place on the home page. */
+    var placeholder = document.createElement("div");
+    placeholder.className = "amd-quote-placeholder";
+    placeholder.style.height = quote.getBoundingClientRect().height + "px";
+    quote.parentNode.insertBefore(placeholder, quote);
+
+    var modal = document.createElement("div");
+    modal.id = "amdQuoteModal";
+    modal.className = "amd-quote-modal";
+    modal.setAttribute("role", "dialog");
+    modal.setAttribute("aria-modal", "true");
+    modal.setAttribute("aria-labelledby", "amdQuoteModalTitle");
+    modal.innerHTML =
+        '<div class="amd-quote-backdrop" aria-hidden="true"></div>' +
+        '<div class="amd-quote-window" role="document">' +
+          '<div class="amd-quote-modal-header">' +
+            '<strong id="amdQuoteModalTitle">BUILD YOUR DETAIL</strong>' +
+            '<button type="button" class="amd-quote-close" aria-label="Close detail request form">&times;</button>' +
+          '</div>' +
+          '<div class="amd-quote-slot"></div>' +
+        '</div>';
+
+    var oldBodyOverflow = document.body.style.overflow;
+    var oldHtmlOverflow = document.documentElement.style.overflow;
+    document.body.appendChild(modal);
+    modal.querySelector(".amd-quote-slot").appendChild(quote);
+
+    var closeButton = modal.querySelector(".amd-quote-close");
+    var onKeydown = function(event) {
+        if (event.key === "Escape") {
+            event.preventDefault();
+            window.amdCloseQuote();
+        } else if (event.key === "Tab") {
+            var focusable = Array.prototype.filter.call(
+                modal.querySelectorAll('button:not([disabled]),a[href],input:not([disabled])'),
+                function(el) { return el.getClientRects().length > 0; }
+            );
+            if (!focusable.length) return;
+            var first = focusable[0];
+            var last = focusable[focusable.length - 1];
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
+            }
+        }
+    };
+    window.amdQuoteModalState = {
+        open: true,
+        quote: quote,
+        placeholder: placeholder,
+        modal: modal,
+        trigger: trigger,
+        oldBodyOverflow: oldBodyOverflow,
+        oldHtmlOverflow: oldHtmlOverflow,
+        keydown: onKeydown
+    };
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+    document.addEventListener("keydown", onKeydown);
+    closeButton.addEventListener("click", window.amdCloseQuote);
+    modal.querySelector(".amd-quote-backdrop").addEventListener("click", window.amdCloseQuote);
+    closeButton.focus({preventScroll: true});
+};
+
+window.amdCloseQuote = function() {
+    var state = window.amdQuoteModalState;
+    if (!state || !state.open) return;
+    state.open = false;
+    document.removeEventListener("keydown", state.keydown);
+    if (state.placeholder.parentNode) {
+        state.placeholder.parentNode.replaceChild(state.quote, state.placeholder);
+    }
+    state.modal.remove();
+    document.body.style.overflow = state.oldBodyOverflow;
+    document.documentElement.style.overflow = state.oldHtmlOverflow;
+    window.amdQuoteModalState = null;
+    if (state.trigger && state.trigger.isConnected && typeof state.trigger.focus === "function") {
+        state.trigger.focus({preventScroll: true});
+    }
 };
 
 
@@ -6358,6 +6432,95 @@ TIGHTER HERO RHYTHM + TRUE VIEWPORT MOBILE DOCK
     outline-offset: 2px;
 }
 
+
+/* Overlay reuses the original 5-step AMD quote form without changing its routing. */
+.amd-quote-modal,
+.amd-quote-modal *,
+.amd-quote-modal *::before,
+.amd-quote-modal *::after { box-sizing: border-box; }
+.amd-quote-modal {
+    --black: #03030a;
+    --purple: #45298d;
+    --purple2: #6546d4;
+    --purple3: #8e78ff;
+    --blue: #367ee8;
+    --blue2: #74b9ff;
+    --white: #f7f8fc;
+    --muted: #9fa6b8;
+    position: fixed;
+    inset: 0;
+    z-index: 2147483600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    font-family: "DM Sans", Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--white);
+    isolation: isolate;
+}
+.amd-quote-modal button,
+.amd-quote-modal input { font-family: inherit; }
+.amd-quote-modal button { cursor: pointer; }
+.amd-quote-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(2, 2, 12, .83);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+}
+.amd-quote-window {
+    position: relative;
+    width: min(100%, 720px);
+    max-height: calc(100dvh - 32px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border: 1px solid rgba(142,120,255,.38);
+    border-radius: 22px;
+    background: linear-gradient(145deg, #201a52, #08081b);
+    box-shadow: 0 30px 100px rgba(0,0,0,.72);
+    -webkit-overflow-scrolling: touch;
+}
+.amd-quote-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 18px 0 24px;
+    color: #d5d9ff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .12em;
+}
+.amd-quote-close {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    border: 1px solid rgba(255,255,255,.22);
+    border-radius: 11px;
+    background: rgba(255,255,255,.08);
+    color: #fff;
+    font-size: 26px;
+    line-height: 1;
+}
+.amd-quote-close:hover { background: rgba(116,185,255,.20); }
+.amd-quote-close:focus-visible { outline: 2px solid #74b9ff; outline-offset: 2px; }
+.amd-quote-modal .amd-quiz {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 18px 24px 24px !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+@media (max-width: 640px) {
+    .amd-quote-modal { padding: 10px; align-items: center; }
+    .amd-quote-window { max-height: calc(100dvh - 20px); border-radius: 16px; }
+    .amd-quote-modal-header { padding: 10px 12px 0 16px; }
+    .amd-quote-modal .amd-quiz { padding: 16px 14px 20px !important; }
+}
+
 </style>
 
 
@@ -9719,7 +9882,12 @@ window.amdSubmitLead = async function(event) {
                 '<p style="color:#aebbd3;font-size:13px;margin:18px 0">Need help right away?</p>' +
                 '<a class="amd-btn amd-btn-primary" href="tel:+18626218676">Call 862-621-8676</a>' +
                 '</div>';
-            panel.scrollIntoView({behavior:"smooth",block:"center"});
+            var popupWindow = document.querySelector("#amdQuoteModal .amd-quote-window");
+            if (popupWindow) {
+                popupWindow.scrollTop = 0;
+            } else {
+                panel.scrollIntoView({behavior:"smooth",block:"center"});
+            }
         }
     } catch (err) {
         var code = err && err.message ? err.message : "REQUEST_FAILED";
